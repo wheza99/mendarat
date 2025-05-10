@@ -1,4 +1,5 @@
 import Hero from "./components/hero";
+import Stats from "./components/stats";
 import Services from "./components/services";
 import Projects from "./components/projects";
 import Team from "./components/team";
@@ -10,6 +11,7 @@ export default async function HomePageTheme1() {
   return (
     <>
       <Hero />
+      <Stats />
       <Services />
       <Projects />
       <Team />
