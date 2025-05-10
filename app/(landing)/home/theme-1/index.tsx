@@ -1,0 +1,21 @@
+import Hero from "./components/hero";
+import Services from "./components/services";
+import Projects from "./components/projects";
+import Team from "./components/team";
+import Process from "./components/process";
+import Pricing from "./components/pricing";
+import Contact from "./components/contact";
+
+export default async function HomePageTheme1() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Projects />
+      <Team />
+      <Process />
+      <Pricing />
+      <Contact />
+    </>
+  );
+}
