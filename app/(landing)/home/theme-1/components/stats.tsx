@@ -7,7 +7,7 @@ export default function Stats() {
           {/* Left side - Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=3465&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1525286335722-c30c6b5df541?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Interior Design Hallway"
               className="w-full h-auto"
             />
