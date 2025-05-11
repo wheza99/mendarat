@@ -1,31 +1,16 @@
+import { processSectionCopy } from '../copy';
+
 export default function Process() {
-  const processSteps = [
-    {
-      number: "01",
-      title: "CONCEPT",
-      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
-    },
-    {
-      number: "02",
-      title: "DESIGN",
-      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
-    },
-    {
-      number: "03",
-      title: "DEVELOPMENT",
-      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
-    }
-  ];
+  const processSteps = processSectionCopy.steps;
 
   return (
     <section className="py-36">
       <div className="container max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">HOW WE WORK</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">{processSectionCopy.heading}</h2>
           <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
-            Far far away behind the word mountains far from the countries Vokalia and
-            Consonantia there live the blind texts.
+            {processSectionCopy.description}
           </p>
         </div>
 

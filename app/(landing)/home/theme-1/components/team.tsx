@@ -1,32 +1,9 @@
 "use client";
 
+import { teamSectionCopy } from '../copy';
+
 export default function Team() {
-  const teamMembers = [
-    {
-      name: "Adora Montmimy",
-      role: "Interior Designer",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=3149&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      name: "Adeline Palmerton",
-      role: "Project Manager",
-      image:
-        "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      name: "Michael Chen",
-      role: "Senior Architect",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Interior Stylist",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+  const teamMembers = teamSectionCopy.teamMembers;
 
   // Only display the first two team members as shown in the design
   const displayedMembers = teamMembers.slice(0, 2);
@@ -38,21 +15,21 @@ export default function Team() {
           {/* Left side - Team info */}
           <div className="md:w-1/3">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              MEET OUR
-              <br />
-              TEAM
+              {teamSectionCopy.heading.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < teamSectionCopy.heading.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove right at the coast of the Semantics, a
-              large language ocean.
+              {teamSectionCopy.description}
             </p>
             <a
               href="#"
               className="inline-block bg-black text-white dark:bg-white dark:text-black px-8 py-3 uppercase text-sm tracking-wider hover:bg-opacity-90 transition duration-300"
             >
-              VIEW ALL
+              {teamSectionCopy.buttonText}
             </a>
           </div>
 
@@ -73,19 +50,19 @@ export default function Team() {
                         href="#"
                         className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition duration-300"
                       >
-                        <span className="text-amber-600 font-bold">f</span>
+                        <span className="text-amber-600 font-bold">{teamSectionCopy.socialLinks[0]}</span>
                       </a>
                       <a
                         href="#"
                         className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition duration-300"
                       >
-                        <span className="text-amber-600 font-bold">in</span>
+                        <span className="text-amber-600 font-bold">{teamSectionCopy.socialLinks[1]}</span>
                       </a>
                       <a
                         href="#"
                         className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition duration-300"
                       >
-                        <span className="text-amber-600 font-bold">ig</span>
+                        <span className="text-amber-600 font-bold">{teamSectionCopy.socialLinks[2]}</span>
                       </a>
                     </div>
                   </div>

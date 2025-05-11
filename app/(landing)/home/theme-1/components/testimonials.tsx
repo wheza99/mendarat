@@ -2,39 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { testimonialsSectionCopy } from '../copy';
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
-    {
-      id: 1,
-      quote:
-        "Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.",
-      name: "John Smith",
-      role: "CEO, Company Inc.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      id: 2,
-      quote:
-        "An overwhelming sense of peace has enveloped my being, akin to the blissful mornings of spring where every moment is cherished with utmost sincerity and joy.",
-      name: "Harper Russo",
-      role: "Manager",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      id: 3,
-      quote:
-        "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.",
-      name: "Sarah Johnson",
-      role: "Interior Designer",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  ];
+  // Use testimonials directly from the copy file
+  const testimonials = testimonialsSectionCopy.testimonials;
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -52,8 +26,8 @@ export default function Testimonials() {
         {/* Left Column - Interior Design Image (Full Width) */}
         <div className="block h-[600px] pb-16 md:pb-0">
           <img
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=3400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Interior Design"
+            src={testimonialsSectionCopy.mainImage}
+            alt={testimonialsSectionCopy.mainImageAlt}
             className="w-full h-full object-cover"
           />
         </div>
@@ -62,10 +36,9 @@ export default function Testimonials() {
         <div className="pl-8 pr-16 flex flex-col justify-center">
           {/* Section Header - Now in the right column */}
           <div className="mb-12">
-            <h2 className="text-4xl font-bold mb-6 uppercase">TESTIMONIALS</h2>
+            <h2 className="text-4xl font-bold mb-6 uppercase">{testimonialsSectionCopy.heading}</h2>
             <p className="text-gray-600 dark:text-gray-400">
-              Far far away behind the word mountains far from the countries
-              Vokalia and Consonantia there live the blind texts.
+              {testimonialsSectionCopy.description}
             </p>
           </div>
 

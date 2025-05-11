@@ -1,3 +1,5 @@
+import { statsSectionCopy } from '../copy';
+
 export default function Stats() {
   return (
     <section className="py-36 px-4 sm:px-6 lg:px-8">
@@ -7,8 +9,8 @@ export default function Stats() {
           {/* Left side - Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1525286335722-c30c6b5df541?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Interior Design Hallway"
+              src={statsSectionCopy.image}
+              alt={statsSectionCopy.imageAlt}
               className="w-full h-auto"
             />
           </div>
@@ -16,41 +18,32 @@ export default function Stats() {
           {/* Right side - Content */}
           <div className="p-8">
             {/* Content */}
-            <div className="text-amber-600 mb-4">/ WELCOME TO INNER</div>
+            <div className="text-amber-600 mb-4">{statsSectionCopy.subtitle}</div>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <div>STYLISH DESIGNS,</div>
-              <div>INNOVATIVE IDEAS</div>
+              <div>{statsSectionCopy.heading1}</div>
+              <div>{statsSectionCopy.heading2}</div>
             </h2>
 
             <p className="text-gray-600 mb-8">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove right at the coast of the Semantics, a
-              large language ocean.
+              {statsSectionCopy.description}
             </p>
 
             <button className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 uppercase text-sm tracking-wider ">
-              READ MORE
+              {statsSectionCopy.buttonText}
             </button>
 
             {/* Stats section - positioned in the second column */}
             <div className="grid grid-cols-2 gap-4 mt-12">
               {/* Years of Experience */}
-              <div>
-                <h3 className="text-3xl font-bold mb-1">
-                  20 <span className="text-gray-500">+</span>
-                </h3>
-                <p className="text-gray-600 text-sm">Years of Experience</p>
-              </div>
-
-              {/* Projects Completed */}
-              <div>
-                <h3 className="text-3xl font-bold mb-1">
-                  1,375 <span className="text-gray-500">+</span>
-                </h3>
-                <p className="text-gray-600 text-sm">Projects Completed</p>
-              </div>
+              {statsSectionCopy.stats.map((stat, index) => (
+                <div key={index}>
+                  <h3 className="text-3xl font-bold mb-1">
+                    {stat.value} {stat.suffix && <span className="text-gray-500">{stat.suffix}</span>}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

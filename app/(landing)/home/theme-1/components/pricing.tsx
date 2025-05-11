@@ -1,56 +1,16 @@
+import { pricingSectionCopy } from '../copy';
+
 export default function Pricing() {
-  const pricingPlans = [
-    {
-      name: "Basic",
-      price: "$1,500",
-      description: "Perfect for small spaces and simple redesigns",
-      features: [
-        "Initial consultation",
-        "Concept development",
-        "2 design revisions",
-        "Basic material selection",
-        "Project management"
-      ],
-      recommended: false
-    },
-    {
-      name: "Premium",
-      price: "$3,500",
-      description: "Comprehensive for medium-sized spaces",
-      features: [
-        "Everything in Basic",
-        "Detailed 3D visualizations",
-        "Custom furniture selection",
-        "4 design revisions",
-        "Lighting design",
-        "Premium material selection"
-      ],
-      recommended: true
-    },
-    {
-      name: "Luxury",
-      price: "$7,000+",
-      description: "Complete transformation for larger spaces",
-      features: [
-        "Everything in Premium",
-        "Unlimited design revisions",
-        "Custom furniture design",
-        "Full project management",
-        "Contractor coordination",
-        "Post-implementation support"
-      ],
-      recommended: false
-    }
-  ];
+  const pricingPlans = pricingSectionCopy.plans;
 
   return (
     <section className="py-36 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">Our Pricing</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">{pricingSectionCopy.heading}</h2>
           <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
-            We offer flexible pricing plans to accommodate different project scopes and budgets.
+            {pricingSectionCopy.description}
           </p>
         </div>
 
@@ -91,7 +51,7 @@ export default function Pricing() {
                   : 'border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black'
                   } transition duration-300`}
               >
-                Select Plan
+                {pricingSectionCopy.selectPlanButtonText}
               </a>
             </div>
           ))}
@@ -99,9 +59,9 @@ export default function Pricing() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 dark:text-gray-300">
-            Need a custom plan for your large-scale project?{" "}
+            {pricingSectionCopy.customPlanText}{" "}
             <a href="#" className="text-black dark:text-white border-b border-black dark:border-white hover:border-opacity-50 transition-all duration-200">
-              Contact us for a detailed quote
+              {pricingSectionCopy.contactLink}
             </a>
           </p>
         </div>

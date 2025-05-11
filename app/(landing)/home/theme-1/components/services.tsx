@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { servicesSectionCopy } from '../copy';
 
 type ServiceItemProps = {
   title: string;
@@ -66,53 +67,7 @@ const ServiceCard = ({
 };
 
 export default function Services() {
-  const serviceItems: ServiceItemProps[] = [
-    {
-      title: "Residential Design",
-      description:
-        "We bring the right people together to challenge established thinking and drive transform in 2020",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      iconPath:
-        "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
-    },
-    {
-      title: "Restaurant Design",
-      description:
-        "We bring the right people together to challenge established thinking and drive transform in 2020",
-      image:
-        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      iconPath:
-        "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z",
-    },
-    {
-      title: "Corporate Design",
-      description:
-        "We bring the right people together to challenge established thinking and drive transform in 2020",
-      image:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      iconPath:
-        "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-    },
-    {
-      title: "Commercial Design",
-      description:
-        "We bring the right people together to challenge established thinking and drive transform in 2020",
-      image:
-        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      iconPath: "M3 3h18v18H3V3z",
-    },
-    {
-      title: "Hospitality Design",
-      description:
-        "We bring the right people together to challenge established thinking and drive transform in 2020",
-      image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      // This icon has two paths, we'll combine them for simplicity
-      iconPath:
-        "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    },
-  ];
+  const serviceItems: ServiceItemProps[] = servicesSectionCopy.services;
 
   return (
     <section className="py-16">
@@ -121,17 +76,16 @@ export default function Services() {
           {/* Services Intro */}
           <div className="flex flex-col justify-center items-start">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              OUR SERVICES
+              {servicesSectionCopy.heading}
             </h2>
             <p className="text-gray-600 mb-6">
-              Far far away behind the word mountains far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              {servicesSectionCopy.description}
             </p>
             <a
               href="#"
               className="inline-block bg-black text-white dark:bg-white dark:text-black px-6 py-3 uppercase text-sm tracking-wider hover:bg-opacity-90 transition duration-300"
             >
-              VIEW ALL
+              {servicesSectionCopy.buttonText}
             </a>
           </div>
 
