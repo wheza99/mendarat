@@ -4,6 +4,7 @@ import Services from "./components/services";
 import Projects from "./components/projects";
 import Team from "./components/team";
 import Process from "./components/process";
+import Testimonials from "./components/testimonials";
 import Pricing from "./components/pricing";
 import Contact from "./components/contact";
 import Clients from "./components/clients";
@@ -18,6 +19,7 @@ export default async function HomePageTheme1() {
       <Team />
       <Clients />
       <Process />
+      <Testimonials />
       <Pricing />
       <Contact />
     </>
