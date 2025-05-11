@@ -6,6 +6,7 @@ import Team from "./components/team";
 import Process from "./components/process";
 import Pricing from "./components/pricing";
 import Contact from "./components/contact";
+import Clients from "./components/clients";
 
 export default async function HomePageTheme1() {
   return (
@@ -15,6 +16,7 @@ export default async function HomePageTheme1() {
       <Services />
       <Projects />
       <Team />
+      <Clients />
       <Process />
       <Pricing />
       <Contact />
