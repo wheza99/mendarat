@@ -2,52 +2,56 @@ export default function Process() {
   const processSteps = [
     {
       number: "01",
-      title: "Initial Consultation",
-      description: "We start by understanding your vision, requirements, and budget to create a project roadmap."
+      title: "CONCEPT",
+      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
     },
     {
       number: "02",
-      title: "Concept Development",
-      description: "Our designers create detailed concepts and mood boards based on your preferences and needs."
+      title: "DESIGN",
+      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
     },
     {
       number: "03",
-      title: "Design Refinement",
-      description: "We refine the concepts based on your feedback until we achieve the perfect design solution."
-    },
-    {
-      number: "04",
-      title: "Implementation",
-      description: "Our team of experts brings your design to life with precision and attention to detail."
+      title: "DEVELOPMENT",
+      description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
     }
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How We Work</h2>
-          <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-600">
-            Our proven design process ensures that each project is executed flawlessly,
-            from initial concept to final implementation.
+    <section className="py-36">
+      <div className="container max-w-7xl mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">HOW WE WORK</h2>
+          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
+            Far far away behind the word mountains far from the countries Vokalia and
+            Consonantia there live the blind texts.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Process Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {processSteps.map((step, index) => (
-            <div key={index} className="border border-gray-200 p-8 bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl font-bold text-black mb-6">{step.number}</div>
-              <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+            <div key={index} className="text-center">
+              {/* Large Number */}
+              <div className="text-[120px] font-bold text-gray-100 dark:text-gray-800 leading-none mb-6">
+                {step.number}
+              </div>
+              
+              {/* Title */}
+              <h3 className="text-xl font-bold mb-6 uppercase">{step.title}</h3>
+              
+              {/* Description */}
+              <p className="text-gray-600 dark:text-gray-400">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <a href="#" className="inline-block px-8 py-3 bg-black text-white hover:bg-opacity-90 transition duration-300">
-            Start Your Project
-          </a>
+        {/* Image Section - Can be added later if needed */}
+        <div className="mt-24">
+          {/* This is where the image from the screenshot would go */}
         </div>
       </div>
     </section>
