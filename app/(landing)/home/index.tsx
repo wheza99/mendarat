@@ -6,15 +6,16 @@ import HomePageTheme3 from "./theme-3";
 import HomePageTheme4 from "./theme-4";
 import HomePageTheme5 from "./theme-5";
 import HomePageTheme6 from "./theme-6";
+import HomePageTheme7 from "./theme-7";
 import ThemeSwitcher from "./theme-switcher";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6">("theme-1");
+  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7">("theme-1");
   
   // Handle theme change
   const handleThemeChange = (theme: string) => {
-    setActiveTheme(theme as "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6");
+    setActiveTheme(theme as "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7");
   };
 
   return (
@@ -25,7 +26,8 @@ export default function HomePage() {
        activeTheme === "theme-3" ? <HomePageTheme3 /> : 
        activeTheme === "theme-4" ? <HomePageTheme4 /> : 
        activeTheme === "theme-5" ? <HomePageTheme5 /> :
-       <HomePageTheme6 />
+       activeTheme === "theme-6" ? <HomePageTheme6 /> :
+       <HomePageTheme7 />
       }
     </>
   );
