@@ -9,7 +9,7 @@ import Testimonials from "./components/testimonials";
 import Pricing from "./components/pricing";
 import Contact from "./components/contact";
 
-export default function HomePageTheme8() {
+export default function HomePageTheme9() {
   return (
     <>
       <Hero />
