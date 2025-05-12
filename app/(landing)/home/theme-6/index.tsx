@@ -10,7 +10,7 @@ import Clients from "./components/clients";
 import Process from "./components/process";
 import Testimonials from "./components/testimonials";
 import Pricing from "./components/pricing";
-import Contact from "./components/contact";
+import Contact from "../theme-1/components/contact";
 
 export default function HomePageTheme6() {
   return (
