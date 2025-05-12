@@ -67,7 +67,7 @@ const GridBackground = () => {
 
 // Digital noise effect
 const DigitalNoise = () => {
-  const [noisePattern, setNoisePattern] = useState<JSX.Element[]>([]);
+  const [noisePattern, setNoisePattern] = useState<React.ReactElement[]>([]);
 
   useEffect(() => {
     const generateNoise = () => {
