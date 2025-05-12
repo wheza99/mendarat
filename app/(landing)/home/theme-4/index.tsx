@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "./components/hero";
 import Stats from "./components/stats";
 import Services from "./components/services";
@@ -9,7 +11,7 @@ import Pricing from "./components/pricing";
 import Contact from "./components/contact";
 import Clients from "./components/clients";
 
-export default function HomePageTheme1() {
+export default function HomePageTheme4() {
   return (
     <>
       <Hero />

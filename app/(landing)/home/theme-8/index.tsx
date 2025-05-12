@@ -3,13 +3,13 @@ import Stats from "./components/stats";
 import Services from "./components/services";
 import Projects from "./components/projects";
 import Team from "./components/team";
+import Clients from "./components/clients";
 import Process from "./components/process";
 import Testimonials from "./components/testimonials";
 import Pricing from "./components/pricing";
 import Contact from "./components/contact";
-import Clients from "./components/clients";
 
-export default function HomePageTheme1() {
+export default function HomePageTheme8() {
   return (
     <>
       <Hero />

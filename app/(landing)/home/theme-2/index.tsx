@@ -9,7 +9,7 @@ import Pricing from "./components/pricing";
 import Contact from "./components/contact";
 import Clients from "./components/clients";
 
-export default function HomePageTheme1() {
+export default function HomePageTheme2() {
   return (
     <>
       <Hero />
