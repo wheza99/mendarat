@@ -1,13 +1,7 @@
-import { EnvVarWarning } from "@/components/auth/env-var-warning";
-import HeaderAuth from "@/components/auth/header-auth";
-import { ThemeSwitcher } from "@/components/layout/theme-switcher";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import Link from "next/link";
 import "./globals.css";
 import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -39,9 +33,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="min-h-screen flex flex-col">
-            <div className="flex-1 w-full flex flex-col">
-              <Navbar />
-              
+            <div className="flex-1 w-full flex flex-col">              
               <div className="flex flex-col w-full">
                 {children}
               </div>
