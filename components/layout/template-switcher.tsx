@@ -7,7 +7,7 @@ interface ThemeSwitcherProps {
   activeTheme: string;
 }
 
-export default function ThemeSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherProps) {
+export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherProps) {
   const themes = ["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7", "theme-8", "theme-9", "theme-10"];
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

@@ -10,7 +10,7 @@ import HomePageTheme7 from "./theme-7";
 import HomePageTheme8 from "./theme-8";
 import HomePageTheme9 from "./theme-9";
 import HomePageTheme10 from "./theme-10";
-import ThemeSwitcher from "./theme-switcher";
+import { TemplateSwitcher } from "../../../components/layout/template-switcher";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
@@ -51,7 +51,7 @@ export default function HomePage() {
 
   return (
     <>
-      <ThemeSwitcher onThemeChange={handleThemeChange} activeTheme={activeTheme} />
+      <TemplateSwitcher onThemeChange={handleThemeChange} activeTheme={activeTheme} />
       {renderTheme()}
     </>
   );
