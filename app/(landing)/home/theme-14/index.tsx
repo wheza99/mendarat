@@ -11,7 +11,7 @@ import Testimonials from "./components/testimonials";
 import Pricing from "./components/pricing";
 import Contact from "./components/contact";
 
-export default function HomePageTheme11() {
+export default function HomePageTheme14() {
   return (
     <>
       <Hero />
