@@ -12,17 +12,18 @@ import HomePageTheme9 from "./theme-9";
 import HomePageTheme10 from "./theme-10";
 import HomePageTheme11 from "./theme-11";
 import Theme12 from "./theme-12";
+import Theme13 from "./theme-13";
 import { TemplateSwitcher } from "../../../components/layout/template-switcher";
 import { useState, useEffect } from "react";
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12" | "theme-13";
 
 export default function HomePage() {
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12">("theme-1");
+  const [activeTheme, setActiveTheme] = useState<LandingPageTheme>("theme-1");
   
   // Handle theme change
   const handleThemeChange = (theme: string) => {
-    setActiveTheme(theme as "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12");
+    setActiveTheme(theme as LandingPageTheme);
   };
 
   // Render the appropriate theme component based on activeTheme
@@ -52,6 +53,8 @@ export default function HomePage() {
         return <HomePageTheme11 />;
       case "theme-12":
         return <Theme12 />;
+      case "theme-13":
+        return <Theme13 />;
       default:
         return <HomePageTheme1 />;
     }
