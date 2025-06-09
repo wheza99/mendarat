@@ -10,15 +10,16 @@ import HomePageTheme7 from "./theme-7";
 import HomePageTheme8 from "./theme-8";
 import HomePageTheme9 from "./theme-9";
 import HomePageTheme10 from "./theme-10";
+import HomePageTheme11 from "./theme-11";
 import { TemplateSwitcher } from "../../../components/layout/template-switcher";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10">("theme-1");
+  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11">("theme-1");
   
   // Handle theme change
   const handleThemeChange = (theme: string) => {
-    setActiveTheme(theme as "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10");
+    setActiveTheme(theme as "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11");
   };
 
   // Render the appropriate theme component based on activeTheme
@@ -44,6 +45,8 @@ export default function HomePage() {
         return <HomePageTheme9 />;
       case "theme-10":
         return <HomePageTheme10 />;
+      case "theme-11":
+        return <HomePageTheme11 />;
       default:
         return <HomePageTheme1 />;
     }
