@@ -20,10 +20,11 @@ import Theme17 from "./theme-17";
 import Theme18 from "./theme-18";
 import Theme19 from "./theme-19";
 import Theme20 from "./theme-20";
+import Theme21 from "./theme-21";
 import { TemplateSwitcher } from "../../../components/layout/template-switcher";
 import { useState, useEffect } from "react";
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21";
 
 export default function HomePage() {
   const [activeTheme, setActiveTheme] = useState<LandingPageTheme>("theme-1");
@@ -76,6 +77,8 @@ export default function HomePage() {
         return <Theme19 />;
       case "theme-20":
         return <Theme20 />;
+      case "theme-21":
+        return <Theme21 />;
       default:
         return <HomePageTheme1 />;
     }
