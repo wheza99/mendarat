@@ -5,6 +5,7 @@ import BusinessTheme1 from "./theme-1";
 import BusinessTheme2 from "./theme-2";
 import BusinessTheme3 from "./theme-3";
 import BusinessTheme4 from "./theme-4";
+import BusinessTheme5 from "./theme-5";
 
 export interface BusinessData {
   id: string;
@@ -17,6 +18,15 @@ export interface BusinessData {
   primary_color: string;
   secondary_color: string;
   selected_template: string;
+  businessId: string;
+  logo?: string;
+  email?: string;
+  location?: string;
+  category?: string;
+  description?: string;
+  socialMedia?: {
+    [key: string]: string | null;
+  };
   metadata: {
     privacy: string;
     shipping: string | null;
@@ -25,6 +35,9 @@ export interface BusinessData {
     announcement: string;
     background: string;
     banner: string | null;
+    services?: string[];
+    currency?: string;
+    language?: string;
   };
   socials: {
     tiktok: string | null;
@@ -52,89 +65,78 @@ export interface BusinessData {
 
 export default function BusinessPage() {
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4">("theme-4");
+  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5">("theme-5");
 
   useEffect(() => {
-    // Default domain untuk testing, nanti bisa diambil dari URL params atau state
-    const domain = "whezabakery.withrolly.com";
-    fetchBusinessData(domain);
-  }, []);
-
-  const fetchBusinessData = async (domain: string) => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const response = await fetch('/api/business', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ domain }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch business data');
-      }
-
-      const data = await response.json();
-      setBusinessData(data);
-    } catch (err) {
-      console.error('API Error, using mock data:', err);
-      // Fallback to mock data for demo purposes
-      const mockData: BusinessData = {
-        id: "DEMO001",
-        img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop",
-        name: "ARKA ARSITEK",
+    // Langsung set mock data tanpa loading
+    const mockData: BusinessData = {
+      id: "DEMO001",
+      businessId: "BIZ-2024-001",
+      img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop",
+      logo: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=100&h=100&fit=crop",
+      name: "CREATIVE STUDIO ARTISAN",
+      email: "hello@creativestudio.com",
+      location: "Jakarta, Indonesia",
+      category: "Creative Design",
+      description: "Studio kreatif yang menghadirkan solusi desain inovatif dengan sentuhan artistik untuk berbagai kebutuhan bisnis modern.",
+      currency: "IDR",
+      format: "business",
+      language: "Indonesian",
+      status: "active",
+      primary_color: "#8B5CF6",
+      secondary_color: "#EC4899",
+      selected_template: "theme-5",
+      socialMedia: {
+        instagram: "https://instagram.com/creativestudio",
+        facebook: "https://facebook.com/creativestudio",
+        twitter: "https://twitter.com/creativestudio",
+        linkedin: "https://linkedin.com/company/creativestudio"
+      },
+      metadata: {
+        privacy: "Kami mengutamakan privasi dan keamanan data Anda dengan kebijakan perlindungan yang komprehensif dan teknologi enkripsi terdepan.",
+        shipping: "Layanan pengiriman cepat dan terpercaya tersedia di seluruh Indonesia dengan tracking real-time.",
+        terms: "Syarat dan ketentuan profesional yang disesuaikan dengan kebutuhan konsultasi desain kreatif.",
+        description: "Menciptakan ruang yang indah dan fungsional yang menginspirasi dan meningkatkan kehidupan sehari-hari dengan sentuhan artistik modern.",
+        announcement: "🎨 Layanan desain berkelanjutan dan konsultasi kreatif kini tersedia!",
+        background: "#FFFFFF",
+        banner: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=600&fit=crop",
+        services: ["Desain Grafis", "Branding", "UI/UX Design", "Konsultasi Kreatif"],
         currency: "IDR",
-        format: "business",
-        language: "Indonesian",
-        status: "Active",
-        primary_color: "#047857",
-        secondary_color: "#065F46",
-        selected_template: "theme-4",
-        metadata: {
-          privacy: "We prioritize your privacy and data security with comprehensive protection policies.",
-          shipping: "Fast and reliable shipping services available nationwide.",
-          terms: "Professional terms of service tailored to architectural consulting needs.",
-          description: "Creating beautiful, functional spaces that inspire and elevate everyday living.",
-          announcement: "🎉 New sustainable design services now available!",
-          background: "#FFFFFF",
-          banner: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=600&fit=crop"
-        },
-        socials: {
-          tiktok: "https://tiktok.com/@arkaarsitek",
-          facebook: "https://facebook.com/arkaarsitek",
-          instagram: "https://instagram.com/arkaarsitek",
-          twitter: "https://twitter.com/arkaarsitek"
-        },
-        messenger: {
-          whatsapp: "https://wa.me/628123456789",
-          discord: null,
-          instagram: "https://instagram.com/arkaarsitek",
-          facebook: "https://facebook.com/arkaarsitek"
-        },
-        menu: {
-          leftpane: "Services",
-          rightpane: "Contact",
-          bottompane: "Projects"
-        },
-        address: "123 Design Street, Creative City, 12345"
-      };
-      setBusinessData(mockData);
-    } finally {
-      setLoading(false);
-    }
-  };
+        language: "Indonesian"
+      },
+      socials: {
+        tiktok: "https://tiktok.com/@creativestudio",
+        facebook: "https://facebook.com/creativestudio",
+        instagram: "https://instagram.com/creativestudio",
+        twitter: "https://twitter.com/creativestudio"
+      },
+      messenger: {
+        whatsapp: "https://wa.me/628123456789",
+        discord: null,
+        instagram: "https://instagram.com/creativestudio",
+        facebook: "https://facebook.com/creativestudio"
+      },
+      menu: {
+        leftpane: "Services",
+        rightpane: "Contact",
+        bottompane: "Projects"
+      },
+      address: "Jl. Kreativitas No. 123, Jakarta Selatan, 12345"
+    };
+    
+    console.log('🎨 Setting mock data directly for Theme-5:', mockData);
+    setBusinessData(mockData);
+  }, []);
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-violet-800 to-fuchsia-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Memuat data business...</p>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-300 mx-auto"></div>
+          <p className="mt-4 text-purple-100">Memuat Business Theme-5...</p>
+          <p className="mt-2 text-purple-200 text-sm">Creative Studio Artisan</p>
         </div>
       </div>
     );
@@ -146,7 +148,7 @@ export default function BusinessPage() {
         <div className="text-center">
           <p className="text-red-600 mb-4">Error: {error}</p>
           <button 
-            onClick={() => fetchBusinessData("whezabakery.withrolly.com")}
+            onClick={() => window.location.reload()}
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
           >
             Coba Lagi
@@ -166,6 +168,7 @@ export default function BusinessPage() {
 
   // Render theme based on selection
   const renderTheme = () => {
+    console.log('🎯 Rendering theme:', activeTheme, 'with data:', businessData);
     switch (activeTheme) {
       case "theme-1":
         return <BusinessTheme1 businessData={businessData} />;
@@ -175,8 +178,12 @@ export default function BusinessPage() {
         return <BusinessTheme3 businessData={businessData} />;
       case "theme-4":
         return <BusinessTheme4 businessData={businessData} />;
+      case "theme-5":
+        console.log('🎨 Rendering BusinessTheme5 with data:', businessData);
+        return <BusinessTheme5 data={businessData} />;
       default:
-        return <BusinessTheme3 businessData={businessData} />;
+        console.log('🎨 Rendering default BusinessTheme5 with data:', businessData);
+        return <BusinessTheme5 data={businessData} />;
     }
   };
 
@@ -224,6 +231,16 @@ export default function BusinessPage() {
             }`}
           >
             Theme 4
+          </button>
+          <button
+            onClick={() => setActiveTheme("theme-5")}
+            className={`px-3 py-2 text-xs font-medium rounded transition-colors ${
+              activeTheme === "theme-5"
+                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            Theme 5
           </button>
         </div>
       </div>
