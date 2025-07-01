@@ -33,13 +33,15 @@ export default function Contact({ businessData }: ContactProps) {
     }));
 
   // Filter active messengers
-  const activeMessengers = Object.entries(businessData.messenger)
-    .filter(([_, value]) => value !== null)
-    .map(([platform, contact]) => ({
-      platform: platform.charAt(0).toUpperCase() + platform.slice(1),
-      contact: contact!,
-      icon: getMessengerIcon(platform)
-    }));
+  const activeMessengers = businessData.messenger 
+    ? Object.entries(businessData.messenger)
+        .filter(([_, value]) => value !== null)
+        .map(([platform, contact]) => ({
+          platform: platform.charAt(0).toUpperCase() + platform.slice(1),
+          contact: contact!,
+          icon: getMessengerIcon(platform)
+        }))
+    : [];
 
   function getSocialIcon(platform: string) {
     const icons: { [key: string]: string } = {
