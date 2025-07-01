@@ -7,6 +7,7 @@ import BusinessTheme3 from "./theme-3";
 import BusinessTheme4 from "./theme-4";
 import BusinessTheme5 from "./theme-5";
 import BusinessTheme6 from "./theme-6";
+import BusinessTheme7 from "./theme-7";
 
 export interface BusinessData {
   id: string;
@@ -68,7 +69,7 @@ export default function BusinessPage() {
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6">("theme-6");
+  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7">("theme-7");
 
   // Function to get mock data based on active theme
   const getMockDataByTheme = (theme: string): BusinessData => {
@@ -246,7 +247,6 @@ export default function BusinessPage() {
         };
       
       case "theme-6":
-      default:
         return {
           ...baseData,
           businessId: "BIZ-2024-006",
@@ -273,12 +273,42 @@ export default function BusinessPage() {
           },
           address: "Jl. Natural Elegance No. 456, Jakarta Selatan, 12345"
         };
+      
+      case "theme-7":
+      default:
+        return {
+          ...baseData,
+          businessId: "BIZ-2024-007",
+          logo: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=100&h=100&fit=crop",
+          name: "DIGITAL HORIZON TECH",
+          email: "contact@digitalhorizon.tech",
+          location: "Singapore",
+          category: "Technology Innovation",
+          description: "Cutting-edge technology company that creates immersive digital experiences and futuristic solutions for the next generation of digital transformation.",
+          primary_color: "#06b6d4",
+          secondary_color: "#3b82f6",
+          selected_template: "theme-7",
+          metadata: {
+            privacy: "Advanced encryption and quantum-level security protocols protect your digital assets and personal information.",
+            shipping: "Global deployment capabilities with real-time monitoring and instant digital delivery systems.",
+            terms: "Comprehensive service agreements designed for optimal digital transformation partnerships.",
+            description: "Pioneering the future of digital innovation through immersive interfaces, neural design systems, and quantum visualization technologies.",
+            announcement: "🚀 Revolutionary Digital Horizon platform now available with AI-powered optimization!",
+            background: "#111827",
+            banner: "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            services: ["Immersive Interfaces", "Neural Design Systems", "Quantum Visualization", "Digital Twins"],
+            currency: "USD",
+            language: "English"
+          },
+          address: "Digital Horizon Tower, Marina Bay, Singapore 018956"
+        };
     }
   };
 
   useEffect(() => {
+    console.log("🔧 Loading theme:", activeTheme);
     const mockData = getMockDataByTheme(activeTheme);
-    console.log(`🎯 Setting mock data for ${activeTheme}:`, mockData.name);
+    console.log("📊 Mock data loaded:", mockData.name, mockData.location);
     setBusinessData(mockData);
   }, [activeTheme]);
 
@@ -320,25 +350,44 @@ export default function BusinessPage() {
 
   // Render theme based on selection
   const renderTheme = () => {
-    console.log('🎯 Rendering theme:', activeTheme, 'with data:', businessData);
-    switch (activeTheme) {
-      case "theme-1":
-        return <BusinessTheme1 businessData={businessData} />;
-      case "theme-2":
-        return <BusinessTheme2 businessData={businessData} />;
-      case "theme-3":
-        return <BusinessTheme3 businessData={businessData} />;
-      case "theme-4":
-        return <BusinessTheme4 businessData={businessData} />;
-      case "theme-5":
-        console.log('🎨 Rendering BusinessTheme5 with data:', businessData);
-        return <BusinessTheme5 data={businessData} />;
-      case "theme-6":
-        console.log('🌿 Rendering BusinessTheme6 with data:', businessData);
-        return <BusinessTheme6 data={businessData} />;
-      default:
-        console.log('🌿 Rendering default BusinessTheme6 with data:', businessData);
-        return <BusinessTheme6 data={businessData} />;
+    try {
+      console.log("🎭 Rendering theme:", activeTheme, "with data:", businessData?.name);
+      
+      switch (activeTheme) {
+        case "theme-1":
+          return <BusinessTheme1 businessData={businessData} />;
+        case "theme-2":
+          return <BusinessTheme2 businessData={businessData} />;
+        case "theme-3":
+          return <BusinessTheme3 businessData={businessData} />;
+        case "theme-4":
+          return <BusinessTheme4 businessData={businessData} />;
+        case "theme-5":
+          return <BusinessTheme5 data={businessData} />;
+        case "theme-6":
+          return <BusinessTheme6 data={businessData} />;
+        case "theme-7":
+          console.log("🚀 About to render BusinessTheme7 with:", businessData?.name);
+          return <BusinessTheme7 data={businessData} />;
+        default:
+          return <BusinessTheme6 data={businessData} />;
+      }
+    } catch (error) {
+      console.error("❌ Error rendering theme:", error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-red-600 mb-4">Error rendering theme: {errorMessage}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Refresh Page
+            </button>
+          </div>
+        </div>
+      );
     }
   };
 
@@ -406,6 +455,16 @@ export default function BusinessPage() {
             }`}
           >
             Theme 6
+          </button>
+          <button
+            onClick={() => setActiveTheme("theme-7")}
+            className={`px-3 py-2 text-xs font-medium rounded transition-colors ${
+              activeTheme === "theme-7"
+                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            Theme 7
           </button>
         </div>
       </div>
