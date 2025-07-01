@@ -8,6 +8,7 @@ import BusinessTheme4 from "./theme-4";
 import BusinessTheme5 from "./theme-5";
 import BusinessTheme6 from "./theme-6";
 import BusinessTheme7 from "./theme-7";
+import BusinessTheme8 from "./theme-8";
 
 export interface BusinessData {
   id: string;
@@ -69,7 +70,7 @@ export default function BusinessPage() {
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7">("theme-7");
+  const [activeTheme, setActiveTheme] = useState<"theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8">("theme-8");
 
   // Function to get mock data based on active theme
   const getMockDataByTheme = (theme: string): BusinessData => {
@@ -275,7 +276,6 @@ export default function BusinessPage() {
         };
       
       case "theme-7":
-      default:
         return {
           ...baseData,
           businessId: "BIZ-2024-007",
@@ -301,6 +301,35 @@ export default function BusinessPage() {
             language: "English"
           },
           address: "Digital Horizon Tower, Marina Bay, Singapore 018956"
+        };
+      
+      case "theme-8":
+      default:
+        return {
+          ...baseData,
+          businessId: "BIZ-2024-008",
+          logo: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=100&h=100&fit=crop",
+          name: "CYBER BUSINESS SOLUTIONS",
+          email: "hello@cyberbusiness.com",
+          location: "Jakarta, Indonesia",
+          category: "Digital Transformation",
+          description: "Perusahaan teknologi yang menghadirkan solusi digital terdepan dengan estetika retro-futuristik untuk mentransformasi bisnis ke era digital yang penuh inovasi.",
+          primary_color: "#ec4899",
+          secondary_color: "#3b82f6",
+          selected_template: "theme-8",
+          metadata: {
+            privacy: "Keamanan data tingkat enterprise dengan enkripsi synthwave-grade untuk melindungi aset digital Anda.",
+            shipping: "Implementasi global dengan monitoring real-time dan deployment sistem digital terdepan.",
+            terms: "Kontrak layanan yang fleksibel dengan pendekatan cyber-business yang menguntungkan semua pihak.",
+            description: "Menciptakan pengalaman digital yang memukau dengan teknologi terdepan dan desain retro-futuristik yang menginspirasi.",
+            announcement: "🚀 Paket Digital Transformation dengan teknologi Synthwave - Diskon 30% untuk early adopters!",
+            background: "#000000",
+            banner: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2025&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            services: ["Web Development", "Mobile Apps", "Digital Marketing", "Cloud Solutions"],
+            currency: "IDR",
+            language: "Indonesian"
+          },
+          address: "Cyber Plaza Tower, Jl. Teknologi Digital No. 88, Jakarta Selatan, 12950"
         };
     }
   };
@@ -369,8 +398,11 @@ export default function BusinessPage() {
         case "theme-7":
           console.log("🚀 About to render BusinessTheme7 with:", businessData?.name);
           return <BusinessTheme7 data={businessData} />;
+        case "theme-8":
+          console.log("🎨 About to render BusinessTheme8 with:", businessData?.name);
+          return <BusinessTheme8 />;
         default:
-          return <BusinessTheme6 data={businessData} />;
+          return <BusinessTheme8 />;
       }
     } catch (error) {
       console.error("❌ Error rendering theme:", error);
@@ -465,6 +497,16 @@ export default function BusinessPage() {
             }`}
           >
             Theme 7
+          </button>
+          <button
+            onClick={() => setActiveTheme("theme-8")}
+            className={`px-3 py-2 text-xs font-medium rounded transition-colors ${
+              activeTheme === "theme-8"
+                ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            Theme 8
           </button>
         </div>
       </div>

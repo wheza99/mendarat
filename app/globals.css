@@ -67,3 +67,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Synthwave Theme 8 - Scanlines Effect */
+@layer utilities {
+  .bg-scanlines {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 100% 2px;
+    pointer-events: none;
+  }
+}
