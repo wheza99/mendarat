@@ -80,3 +80,18 @@
     pointer-events: none;
   }
 }
+
+/* Cosmic Theme 28 - Space Animations */
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  
+  .animate-spin-reverse {
+    animation: spin 6s linear infinite reverse;
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
