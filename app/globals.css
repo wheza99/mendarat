@@ -95,3 +95,70 @@
     background: radial-gradient(circle, var(--tw-gradient-stops));
   }
 }
+
+/* Organic Theme 29 - Nature Animations */
+@layer utilities {
+  .animate-float {
+    animation: organic-float 3s ease-in-out infinite;
+  }
+  
+  .animate-grow {
+    animation: organic-grow 2s ease-out forwards;
+  }
+  
+  .animate-breathe {
+    animation: organic-breathe 4s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: organic-fade-in 0.8s ease-out forwards;
+  }
+}
+
+@keyframes organic-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes organic-grow {
+  0% { 
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes organic-breathe {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes organic-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
