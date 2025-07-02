@@ -162,3 +162,66 @@
     transform: translateY(0);
   }
 }
+
+/* Retro Gaming Theme 30 - Gaming Animations */
+@layer utilities {
+  .animate-gaming-float {
+    animation: gaming-float 4s ease-in-out infinite;
+  }
+  
+  .animate-gaming-glow {
+    animation: gaming-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-pixel-bounce {
+    animation: pixel-bounce 1.5s ease-in-out infinite;
+  }
+  
+  .animate-retro-pulse {
+    animation: retro-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes gaming-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+@keyframes gaming-glow {
+  0% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.8);
+  }
+}
+
+@keyframes pixel-bounce {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes retro-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
