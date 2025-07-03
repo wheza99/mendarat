@@ -1,46 +1,59 @@
 "use client";
 
-import HomePageTheme1 from "./theme-1";
-import HomePageTheme2 from "./theme-2";
-import HomePageTheme3 from "./theme-3";
-import HomePageTheme4 from "./theme-4";
-import HomePageTheme5 from "./theme-5";
-import HomePageTheme6 from "./theme-6";
-import HomePageTheme7 from "./theme-7";
-import HomePageTheme8 from "./theme-8";
-import HomePageTheme9 from "./theme-9";
-import HomePageTheme10 from "./theme-10";
-import HomePageTheme11 from "./theme-11";
-import HomePageTheme14 from "./theme-14";
-import Theme12 from "./theme-12";
-import Theme13 from "./theme-13";
-import Theme15 from "./theme-15";
-import Theme16 from "./theme-16";
-import Theme17 from "./theme-17";
-import Theme18 from "./theme-18";
-import Theme19 from "./theme-19";
-import Theme20 from "./theme-20";
-import Theme21 from "./theme-21";
-import Theme22 from "./theme-22";
-import Theme23 from "./theme-23";
-import Theme24 from "./theme-24";
-import Theme25 from "./theme-25";
-import Theme26 from "./theme-26";
-import Theme27 from "./theme-27";
-import Theme28 from "./theme-28";
-import Theme29 from "./theme-29";
-import Theme30 from "./theme-30";
-import Theme31 from "./theme-31";
-import Theme32 from "./theme-32";
-import Theme33 from "./theme-33";
-import Theme34 from "./theme-34";
-import Theme35 from "./theme-35";
-import Theme36 from "./theme-36";
-import Theme37 from "./theme-37";
 import { TemplateSwitcher } from "../../../components/layout/template-switcher";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37";
+// Dynamic imports for all themes to prevent ChunkLoadError
+const HomePageTheme1 = lazy(() => import("./theme-1"));
+const HomePageTheme2 = lazy(() => import("./theme-2"));
+const HomePageTheme3 = lazy(() => import("./theme-3"));
+const HomePageTheme4 = lazy(() => import("./theme-4"));
+const HomePageTheme5 = lazy(() => import("./theme-5"));
+const HomePageTheme6 = lazy(() => import("./theme-6"));
+const HomePageTheme7 = lazy(() => import("./theme-7"));
+const HomePageTheme8 = lazy(() => import("./theme-8"));
+const HomePageTheme9 = lazy(() => import("./theme-9"));
+const HomePageTheme10 = lazy(() => import("./theme-10"));
+const HomePageTheme11 = lazy(() => import("./theme-11"));
+const HomePageTheme14 = lazy(() => import("./theme-14"));
+const Theme12 = lazy(() => import("./theme-12"));
+const Theme13 = lazy(() => import("./theme-13"));
+const Theme15 = lazy(() => import("./theme-15"));
+const Theme16 = lazy(() => import("./theme-16"));
+const Theme17 = lazy(() => import("./theme-17"));
+const Theme18 = lazy(() => import("./theme-18"));
+const Theme19 = lazy(() => import("./theme-19"));
+const Theme20 = lazy(() => import("./theme-20"));
+const Theme21 = lazy(() => import("./theme-21"));
+const Theme22 = lazy(() => import("./theme-22"));
+const Theme23 = lazy(() => import("./theme-23"));
+const Theme24 = lazy(() => import("./theme-24"));
+const Theme25 = lazy(() => import("./theme-25"));
+const Theme26 = lazy(() => import("./theme-26"));
+const Theme27 = lazy(() => import("./theme-27"));
+const Theme28 = lazy(() => import("./theme-28"));
+const Theme29 = lazy(() => import("./theme-29"));
+const Theme30 = lazy(() => import("./theme-30"));
+const Theme31 = lazy(() => import("./theme-31"));
+const Theme32 = lazy(() => import("./theme-32"));
+const Theme33 = lazy(() => import("./theme-33"));
+const Theme34 = lazy(() => import("./theme-34"));
+const Theme35 = lazy(() => import("./theme-35"));
+const Theme36 = lazy(() => import("./theme-36"));
+const Theme37 = lazy(() => import("./theme-37"));
+const Theme38 = lazy(() => import("./theme-38"));
+
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38";
+
+// Loading component for Suspense fallback
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-cyan-400 text-lg font-mono">Loading theme...</p>
+    </div>
+  </div>
+);
 
 export default function HomePage() {
   const [activeTheme, setActiveTheme] = useState<LandingPageTheme>("theme-1");
@@ -127,6 +140,8 @@ export default function HomePage() {
         return <Theme36 />;
       case "theme-37":
         return <Theme37 />;
+      case "theme-38":
+        return <Theme38 />;
       default:
         return <HomePageTheme1 />;
     }
@@ -135,7 +150,9 @@ export default function HomePage() {
   return (
     <>
       <TemplateSwitcher onThemeChange={handleThemeChange} activeTheme={activeTheme} />
-      {renderTheme()}
+      <Suspense fallback={<LoadingFallback />}>
+        {renderTheme()}
+      </Suspense>
     </>
   );
 }

@@ -1,14 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import BusinessTheme1 from "./theme-1";
-import BusinessTheme2 from "./theme-2";
-import BusinessTheme3 from "./theme-3";
-import BusinessTheme4 from "./theme-4";
-import BusinessTheme5 from "./theme-5";
-import BusinessTheme6 from "./theme-6";
-import BusinessTheme7 from "./theme-7";
-import BusinessTheme8 from "./theme-8";
+import { useState, useEffect, Suspense, lazy } from "react";
+
+// Dynamic imports for business themes to prevent ChunkLoadError
+const BusinessTheme1 = lazy(() => import("./theme-1"));
+const BusinessTheme2 = lazy(() => import("./theme-2"));
+const BusinessTheme3 = lazy(() => import("./theme-3"));
+const BusinessTheme4 = lazy(() => import("./theme-4"));
+const BusinessTheme5 = lazy(() => import("./theme-5"));
+const BusinessTheme6 = lazy(() => import("./theme-6"));
+const BusinessTheme7 = lazy(() => import("./theme-7"));
+const BusinessTheme8 = lazy(() => import("./theme-8"));
+
+// Loading component for business themes
+const BusinessLoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-blue-400 text-lg font-mono">Loading business theme...</p>
+    </div>
+  </div>
+);
 
 export interface BusinessData {
   id: string;
@@ -511,7 +523,9 @@ export default function BusinessPage() {
         </div>
       </div>
       
-      {renderTheme()}
+      <Suspense fallback={<BusinessLoadingFallback />}>
+        {renderTheme()}
+      </Suspense>
     </>
   );
 } 
