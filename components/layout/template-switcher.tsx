@@ -10,7 +10,14 @@ interface ThemeSwitcherProps {
 export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherProps) {
   const themes = [
     "theme-1", "theme-2", "theme-3", "theme-4", "theme-5", 
-    "theme-6", "theme-7", "theme-8", "theme-9", "theme-10", "theme-11", "theme-12", "theme-13", "theme-14", "theme-15", "theme-16", "theme-17", "theme-18", "theme-19", "theme-20", "theme-21", "theme-22", "theme-23", "theme-24", "theme-25", "theme-26", "theme-27", "theme-28", "theme-29", "theme-30", "theme-31", "theme-32", "theme-33", "theme-34", "theme-35", "theme-36", "theme-37", "theme-38", "theme-39", "theme-40", "theme-41", "theme-42", "theme-43", "theme-44"
+    "theme-6", "theme-7", "theme-8", "theme-9", "theme-10", 
+    "theme-11", "theme-12", "theme-13", "theme-14", "theme-15", 
+    "theme-16", "theme-17", "theme-18", "theme-19", "theme-20", 
+    "theme-21", "theme-22", "theme-23", "theme-24", "theme-25", 
+    "theme-26", "theme-27", "theme-28", "theme-29", "theme-30", 
+    "theme-31", "theme-32", "theme-33", "theme-34", "theme-35", 
+    "theme-36", "theme-37", "theme-38", "theme-39", "theme-40", 
+    "theme-41", "theme-42", "theme-43", "theme-44", "theme-45"
   ];
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -47,7 +54,7 @@ export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherPr
   };
   
   return (
-    <div ref={dropdownRef} className="fixed top-4 right-4 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-lg p-3">
+    <div ref={dropdownRef} className="fixed top-4 right-4 z-[9999] bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-lg p-3 pointer-events-auto">
       <div className="flex flex-col gap-2">
         <h3 className="text-sm font-medium mb-1">Theme Switcher</h3>
         
@@ -75,7 +82,7 @@ export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherPr
           
           {/* Dropdown menu */}
           {isOpen && (
-            <div className="absolute right-0 mt-1 w-full bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-10 max-h-80 overflow-y-auto">
+            <div className="absolute right-0 mt-1 w-full bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-[10000] max-h-80 overflow-y-auto pointer-events-auto">
               {themes.map((theme) => {
                 const themeNumber = getThemeNumber(theme);
                 return (
