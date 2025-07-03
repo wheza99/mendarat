@@ -54,7 +54,7 @@ export default function Theme40() {
       <Contact />
 
       {/* Custom CSS for Mars theme */}
-      <style jsx global>{`
+      <style jsx>{`
         @keyframes dustStorm {
           0% {
             transform: translateX(-100px) rotate(0deg);

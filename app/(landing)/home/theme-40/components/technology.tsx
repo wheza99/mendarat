@@ -1,58 +1,78 @@
 'use client';
 
-export default function Technology() {
-  return (
-    <section className="py-20 px-4 bg-red-900/30">
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-orange-900/30 border border-red-500/30 rounded-full mb-8">
-          <span className="text-xl">⚙️</span>
-          <span className="font-mono text-red-300 tracking-wider uppercase text-sm">Mars Technology</span>
-        </div>
-        
-        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 mb-8">
-          Advanced Colony Systems
-        </h2>
-        
-        <p className="text-xl text-orange-200 max-w-4xl mx-auto leading-relaxed mb-12">
-          Cutting-edge technology enables sustainable life on Mars through atmospheric processing, 
-          resource extraction, and advanced manufacturing capabilities.
-        </p>
+import { useState, useEffect } from 'react';
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            { 
-              name: 'Atmospheric Processors', 
-              description: 'Convert CO2 to breathable oxygen and create protective atmospheric layers',
-              specs: 'Output: 2,400L O2/hour',
-              icon: '🌬️' 
-            },
-            { 
-              name: 'MOXIE Units', 
-              description: 'Mars Oxygen In-Situ Resource Utilization for life support systems',
-              specs: 'Efficiency: 98.7%',
-              icon: '⚛️' 
-            },
-            { 
-              name: 'Solar Panel Arrays', 
-              description: 'High-efficiency photovoltaic systems adapted for Mars solar conditions',
-              specs: 'Power: 150MW total',
-              icon: '☀️' 
-            },
-            { 
-              name: 'Water Recycling', 
-              description: 'Closed-loop water processing and ice mining extraction systems',
-              specs: 'Recovery: 99.2%',
-              icon: '💧' 
-            }
-          ].map((tech, index) => (
-            <div key={index} className="p-6 bg-red-800/20 border border-orange-500/20 rounded-xl hover:border-orange-400/30 transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="text-4xl">{tech.icon}</div>
-                <div className="text-left">
-                  <h3 className="text-xl font-bold text-orange-400 mb-2">{tech.name}</h3>
-                  <p className="text-orange-200 mb-3">{tech.description}</p>
-                  <p className="text-slate-300 text-sm font-mono">{tech.specs}</p>
-                </div>
+const technologies = [
+  {
+    name: 'Life Support Systems',
+    description: 'Advanced atmospheric processors and water recycling systems',
+    icon: '🫁',
+    status: 'Active',
+    efficiency: '98%'
+  },
+  {
+    name: 'Solar Arrays',
+    description: 'High-efficiency photovoltaic panels adapted for Mars atmosphere',
+    icon: '☀️',
+    status: 'Operational',
+    efficiency: '87%'
+  },
+  {
+    name: 'Habitat Modules',
+    description: 'Pressurized living spaces with radiation shielding',
+    icon: '🏠',
+    status: 'Expanding',
+    efficiency: '94%'
+  },
+  {
+    name: 'Resource Extraction',
+    description: 'Mining equipment for water, minerals, and atmospheric gases',
+    icon: '⛏️',
+    status: 'Active',
+    efficiency: '76%'
+  }
+];
+
+export default function Technology() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('technology-section');
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="technology-section" className="py-20 px-4 relative bg-gradient-to-b from-transparent to-red-950/30">
+      <div className="max-w-7xl mx-auto">
+        <div className={'text-center mb-16 transition-all duration-1000 ' + (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-6">
+            Mars Technology
+          </h2>
+          <p className="text-xl text-orange-200 max-w-3xl mx-auto">
+            Cutting-edge systems enabling human survival on the Red Planet
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {technologies.map((tech, index) => (
+            <div key={index} className={'p-6 bg-red-900/20 border border-orange-400/30 rounded-xl mars-glow transition-all duration-700 ' + (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')} style={{ transitionDelay: index * 200 + 'ms' }}>
+              <div className="text-4xl mb-4 text-center">{tech.icon}</div>
+              <h3 className="text-xl font-bold text-orange-300 mb-3">{tech.name}</h3>
+              <p className="text-orange-100 text-sm mb-4">{tech.description}</p>
+              <div className="flex justify-between items-center">
+                <span className="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded-full">{tech.status}</span>
+                <span className="text-orange-400 font-mono text-sm">{tech.efficiency}</span>
               </div>
             </div>
           ))}
