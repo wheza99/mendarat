@@ -43,8 +43,9 @@ const Theme36 = lazy(() => import("./theme-36"));
 const Theme37 = lazy(() => import("./theme-37"));
 const Theme38 = lazy(() => import("./theme-38"));
 const Theme39 = lazy(() => import("./theme-39"));
+const Theme40 = lazy(() => import("./theme-40"));
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40";
 
 // Loading component for Suspense fallback
 const LoadingFallback = () => (
@@ -145,6 +146,8 @@ export default function HomePage() {
         return <Theme38 />;
       case "theme-39":
         return <Theme39 />;
+      case "theme-40":
+        return <Theme40 />;
       default:
         return <HomePageTheme1 />;
     }
