@@ -47,8 +47,9 @@ const Theme40 = lazy(() => import("./theme-40"));
 const Theme41 = lazy(() => import("./theme-41"));
 const Theme42 = lazy(() => import("./theme-42"));
 const Theme43 = lazy(() => import("./theme-43"));
+const Theme44 = lazy(() => import("./theme-44"));
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-14" | "theme-12" | "theme-13" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43" | "theme-44";
 
 // Loading component for Suspense fallback
 const LoadingFallback = () => (
@@ -61,7 +62,7 @@ const LoadingFallback = () => (
 );
 
 export default function HomePage() {
-  const [activeTheme, setActiveTheme] = useState<LandingPageTheme>("theme-43");
+  const [activeTheme, setActiveTheme] = useState<LandingPageTheme>("theme-44");
   
   // Handle theme change
   const handleThemeChange = (theme: string) => {
@@ -157,6 +158,8 @@ export default function HomePage() {
         return <Theme42 />;
       case "theme-43":
         return <Theme43 />;
+      case "theme-44":
+        return <Theme44 />;
       default:
         return <HomePageTheme1 />;
     }
