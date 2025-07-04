@@ -4111,3 +4111,372 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Theme 64 - Quantum Biology Animations */
+@layer utilities {
+  .animate-bio-float { animation: bio-quantum-float 6s ease-in-out infinite; }
+  .animate-bio-drift { animation: bio-quantum-drift 8s ease-in-out infinite; }
+  .animate-bio-spin { animation: bio-quantum-spin 12s linear infinite; }
+  .animate-bio-counter-spin { animation: bio-quantum-counter-spin 10s linear infinite; }
+  .animate-bio-pulse { animation: bio-quantum-pulse 3s ease-in-out infinite; }
+  .animate-bio-pulse-slow { animation: bio-quantum-pulse-slow 5s ease-in-out infinite; }
+  .animate-bio-glow { animation: bio-quantum-glow 4s ease-in-out infinite; }
+  .animate-bio-wave { animation: bio-quantum-wave 12s ease-in-out infinite; }
+  .animate-bio-helix { animation: bio-quantum-helix 15s linear infinite; }
+  .animate-bio-helix-reverse { animation: bio-quantum-helix-reverse 15s linear infinite; }
+  .animate-bio-quantum { animation: bio-quantum-quantum 8s ease-in-out infinite; }
+  .animate-bio-quantum-field { animation: bio-quantum-field 20s ease-in-out infinite; }
+  .animate-bio-quantum-field-reverse { animation: bio-quantum-field-reverse 25s ease-in-out infinite; }
+  .animate-bio-text { animation: bio-quantum-text 6s ease-in-out infinite; }
+  .animate-bio-text-reverse { animation: bio-quantum-text-reverse 8s ease-in-out infinite; }
+  .animate-bio-button { animation: bio-quantum-button 3s ease-in-out infinite; }
+  .animate-bio-fade-in { animation: bio-quantum-fade-in 1s ease-out forwards; }
+  .animate-bio-count { animation: bio-quantum-count 2s ease-out forwards; }
+  .animate-bio-progress { animation: bio-quantum-progress 3s ease-out forwards; }
+  .animate-bio-blink { animation: bio-quantum-blink 2s ease-in-out infinite; }
+  .animate-bio-data-stream { animation: bio-quantum-data-stream 3s linear infinite; }
+}
+
+@keyframes bio-quantum-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-12px) translateX(6px) rotate(1deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-4px) rotate(-0.5deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-8px) translateX(-8px) rotate(0.8deg);
+    opacity: 0.95;
+  }
+}
+
+@keyframes bio-quantum-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(20px, -10px) rotate(45deg) scale(1.05);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-15px, 15px) rotate(90deg) scale(0.95);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(18px, -18px) rotate(135deg) scale(1.02);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes bio-quantum-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes bio-quantum-counter-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(-180deg) scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes bio-quantum-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.3) hue-rotate(10deg);
+  }
+}
+
+@keyframes bio-quantum-pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+    filter: brightness(1.2) saturate(1.3);
+  }
+}
+
+@keyframes bio-quantum-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.8), 0 0 50px rgba(20, 184, 166, 0.4);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes bio-quantum-wave {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-10px) scaleY(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-18px) scaleY(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-6px) scaleY(1.05);
+    opacity: 0.85;
+  }
+}
+
+@keyframes bio-quantum-helix {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(10px) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0px) rotate(180deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(-10px) rotate(270deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes bio-quantum-helix-reverse {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(-10px) rotate(-90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(0px) rotate(-180deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateX(10px) rotate(-270deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0px) rotate(-360deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes bio-quantum-quantum {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, -15px) scale(1.2);
+    opacity: 0.8;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: translate(-15px, 15px) scale(0.8);
+    opacity: 1;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    transform: translate(15px, 15px) scale(1.1);
+    opacity: 0.6;
+    filter: hue-rotate(270deg);
+  }
+}
+
+@keyframes bio-quantum-field {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes bio-quantum-field-reverse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.2) rotate(-180deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes bio-quantum-text {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    background-position: 50% 25%;
+    filter: brightness(1.2) hue-rotate(15deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.4) hue-rotate(30deg);
+  }
+  75% {
+    background-position: 50% 75%;
+    filter: brightness(1.2) hue-rotate(15deg);
+  }
+}
+
+@keyframes bio-quantum-text-reverse {
+  0%, 100% {
+    background-position: 100% 50%;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    background-position: 50% 75%;
+    filter: brightness(1.1) hue-rotate(-15deg);
+  }
+  50% {
+    background-position: 0% 50%;
+    filter: brightness(1.3) hue-rotate(-30deg);
+  }
+  75% {
+    background-position: 50% 25%;
+    filter: brightness(1.1) hue-rotate(-15deg);
+  }
+}
+
+@keyframes bio-quantum-button {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 0 50px rgba(20, 184, 166, 0.2);
+  }
+}
+
+@keyframes bio-quantum-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes bio-quantum-count {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: brightness(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes bio-quantum-progress {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    width: var(--progress, 100%);
+    opacity: 1;
+    filter: hue-rotate(15deg);
+  }
+}
+
+@keyframes bio-quantum-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes bio-quantum-data-stream {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+.text-gradient-bio {
+  background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4, #0891b2);
+  background-size: 300% 300%;
+  animation: bio-quantum-text 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
