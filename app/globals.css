@@ -1580,10 +1580,268 @@
 
 /* Ocean Grid Animation */
 @keyframes ocean-grid {
-  0% {
+  0%, 100% {
+    opacity: 0.1;
     transform: translate(0, 0);
   }
+  25% {
+    opacity: 0.2;
+    transform: translate(1px, 1px);
+  }
+  50% {
+    opacity: 0.15;
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    opacity: 0.25;
+    transform: translate(1px, -1px);
+  }
+}
+
+/* Theme 55 - Mystic Forest Animations */
+@layer utilities {
+  .animate-mystic-float { animation: mystic-float 6s ease-in-out infinite; }
+  .animate-mystic-drift { animation: mystic-drift 8s ease-in-out infinite; }
+  .animate-mystic-spiral { animation: mystic-spiral 10s linear infinite; }
+  .animate-mystic-pulse { animation: mystic-pulse 4s ease-in-out infinite; }
+  .animate-mystic-spin { animation: mystic-spin 20s linear infinite; }
+  .animate-mystic-sway { animation: mystic-sway 15s ease-in-out infinite; }
+  .animate-mystic-firefly { animation: mystic-firefly 5s ease-in-out infinite; }
+  .animate-mystic-grow { animation: mystic-grow 3s ease-out infinite; }
+  .animate-mystic-bloom { animation: mystic-bloom 4s ease-in-out infinite; }
+  .animate-mystic-gradient { animation: mystic-gradient 8s ease-in-out infinite; }
+  .animate-mystic-progress { animation: mystic-progress 3s ease-out infinite; }
+  .animate-mystic-fade-in { animation: mystic-fade-in 1s ease-out forwards; }
+  .animate-mystic-slide-in { animation: mystic-slide-in 1s ease-out forwards; }
+  .animate-mystic-neural { animation: mystic-neural 3s ease-in-out infinite; }
+}
+
+/* Mystic Float Animation */
+@keyframes mystic-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-35px) scale(0.95);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-15px) scale(1.05);
+    opacity: 0.95;
+  }
+}
+
+/* Mystic Drift Animation */
+@keyframes mystic-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateX(30px) translateY(-20px) rotate(30deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-20px) translateY(-40px) rotate(60deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(35px) translateY(-10px) rotate(90deg);
+    opacity: 0.8;
+  }
+}
+
+/* Mystic Spiral Animation */
+@keyframes mystic-spiral {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(15px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(0px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-15px) rotate(270deg);
+    opacity: 0.9;
+  }
   100% {
-    transform: translate(80px, 80px);
+    transform: translateX(0px) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+/* Mystic Pulse Animation */
+@keyframes mystic-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Mystic Spin Animation */
+@keyframes mystic-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mystic Sway Animation */
+@keyframes mystic-sway {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateX(10px) rotate(2deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-5px) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(8px) rotate(1.5deg);
+    opacity: 0.85;
+  }
+}
+
+/* Mystic Firefly Animation */
+@keyframes mystic-firefly {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) scale(0.8);
+  }
+  25% {
+    opacity: 0.9;
+    transform: translateY(-15px) scale(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-25px) scale(1);
+  }
+  75% {
+    opacity: 0.6;
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+/* Mystic Grow Animation */
+@keyframes mystic-grow {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mystic Bloom Animation */
+@keyframes mystic-bloom {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Mystic Gradient Animation */
+@keyframes mystic-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Mystic Progress Animation */
+@keyframes mystic-progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Mystic Fade In Animation */
+@keyframes mystic-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mystic Slide In Animation */
+@keyframes mystic-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mystic Neural Animation */
+@keyframes mystic-neural {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+/* Mystic Pattern Animation */
+@keyframes mystic-pattern {
+  0%, 100% {
+    opacity: 0.1;
+    transform: translate(0, 0);
+  }
+  25% {
+    opacity: 0.2;
+    transform: translate(2px, 2px);
+  }
+  50% {
+    opacity: 0.15;
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    opacity: 0.25;
+    transform: translate(1px, -2px);
   }
 }
