@@ -1423,3 +1423,167 @@
     transform: translate(1px, -2px);
   }
 }
+
+/* Theme 54 - Digital Ocean Animations */
+@layer utilities {
+  .animate-ocean-float { animation: ocean-float 5s ease-in-out infinite; }
+  .animate-ocean-drift { animation: ocean-drift 7s ease-in-out infinite; }
+  .animate-ocean-bubble { animation: ocean-bubble 4s ease-in-out infinite; }
+  .animate-ocean-pulse { animation: ocean-pulse 3s ease-in-out infinite; }
+  .animate-ocean-spin { animation: ocean-spin 15s linear infinite; }
+  .animate-ocean-wave { animation: ocean-wave 12s ease-in-out infinite; }
+  .animate-ocean-flow { animation: ocean-flow 8s linear infinite; }
+  .animate-ocean-gradient { animation: ocean-gradient 6s ease-in-out infinite; }
+  .animate-ocean-progress { animation: ocean-progress 3s ease-in-out infinite; }
+  .animate-ocean-neural { animation: ocean-neural 2s ease-in-out infinite; }
+}
+
+/* Ocean Float Animation */
+@keyframes ocean-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-25px) scale(0.95);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Ocean Drift Animation */
+@keyframes ocean-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(20px) translateY(-15px) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-15px) translateY(-30px) rotate(90deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(25px) translateY(-5px) rotate(135deg);
+    opacity: 0.7;
+  }
+}
+
+/* Ocean Bubble Animation */
+@keyframes ocean-bubble {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Ocean Pulse Animation */
+@keyframes ocean-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Ocean Spin Animation */
+@keyframes ocean-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ocean Wave Animation */
+@keyframes ocean-wave {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+/* Ocean Flow Animation */
+@keyframes ocean-flow {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Ocean Gradient Animation */
+@keyframes ocean-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Ocean Progress Animation */
+@keyframes ocean-progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Ocean Neural Animation */
+@keyframes ocean-neural {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+/* Ocean Grid Animation */
+@keyframes ocean-grid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 80px);
+  }
+}
