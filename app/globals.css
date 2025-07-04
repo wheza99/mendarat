@@ -2943,3 +2943,352 @@
     transform: translate(3px, -2px);
   }
 }
+
+/* Theme 60 - Volcanic Cosmos Animations */
+@layer utilities {
+  .animate-volcanic-float { animation: volcanic-float 6s ease-in-out infinite; }
+  .animate-volcanic-drift { animation: volcanic-drift 8s ease-in-out infinite; }
+  .animate-volcanic-spin { animation: volcanic-spin 15s linear infinite; }
+  .animate-volcanic-pulse { animation: volcanic-pulse 3s ease-in-out infinite; }
+  .animate-volcanic-glow { animation: volcanic-glow 4s ease-in-out infinite; }
+  .animate-volcanic-wave { animation: volcanic-wave 12s ease-in-out infinite; }
+  .animate-volcanic-flow { animation: volcanic-flow 10s linear infinite; }
+  .animate-volcanic-eruption { animation: volcanic-eruption 8s ease-in-out infinite; }
+  .animate-volcanic-flicker { animation: volcanic-flicker 2s ease-in-out infinite; }
+  .animate-volcanic-twinkle { animation: volcanic-twinkle 4s ease-in-out infinite; }
+  .animate-volcanic-stream { animation: volcanic-stream 6s linear infinite; }
+  .animate-volcanic-shimmer { animation: volcanic-shimmer 5s ease-in-out infinite; }
+  .animate-volcanic-drop { animation: volcanic-drop 8s linear infinite; }
+  .animate-volcanic-spark { animation: volcanic-spark 3s ease-in-out infinite; }
+  .animate-volcanic-eruption-core { animation: volcanic-eruption-core 4s ease-in-out infinite; }
+  .animate-volcanic-eruption-particle { animation: volcanic-eruption-particle 6s linear infinite; }
+  .animate-volcanic-progress { animation: volcanic-progress 3s ease-out infinite; }
+  .animate-volcanic-fade-in { animation: volcanic-fade-in 1s ease-out forwards; }
+  .animate-volcanic-slide-in { animation: volcanic-slide-in 1s ease-out forwards; }
+  .animate-volcanic-count { animation: volcanic-count 2s ease-out forwards; }
+  .animate-volcanic-signal { animation: volcanic-signal 4s ease-in-out infinite; }
+}
+
+@keyframes volcanic-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(90deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-35px) translateX(-5px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-15px) translateX(-15px) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes volcanic-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(40px, -20px) rotate(120deg) scale(1.1);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-30px, 25px) rotate(240deg) scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes volcanic-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.05);
+    filter: brightness(1.2) hue-rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    filter: brightness(1.4) hue-rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+    filter: brightness(1.1) hue-rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    filter: brightness(1) hue-rotate(360deg);
+  }
+}
+
+@keyframes volcanic-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes volcanic-glow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: blur(0px) brightness(1);
+    box-shadow: 0 0 10px rgba(251, 146, 60, 0.3);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(3px) brightness(1.8);
+    box-shadow: 0 0 30px rgba(251, 146, 60, 0.8);
+  }
+}
+
+@keyframes volcanic-wave {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-25px) scaleY(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-40px) scaleY(0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-20px) scaleY(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes volcanic-flow {
+  0% {
+    transform: translateX(-120px) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+    transform: rotate(90deg);
+  }
+  75% {
+    opacity: 0.8;
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: translateX(120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes volcanic-eruption {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+    opacity: 0.4;
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    transform: scale(1.1) translateY(-10px);
+    opacity: 0.7;
+    filter: brightness(1.3) saturate(1.5);
+  }
+  50% {
+    transform: scale(1.2) translateY(-20px);
+    opacity: 1;
+    filter: brightness(1.6) saturate(2);
+  }
+  75% {
+    transform: scale(1.05) translateY(-5px);
+    opacity: 0.8;
+    filter: brightness(1.2) saturate(1.3);
+  }
+}
+
+@keyframes volcanic-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 0.8;
+    filter: brightness(1.3);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(0.8);
+  }
+  75% {
+    opacity: 0.7;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes volcanic-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes volcanic-stream {
+  0% {
+    stroke-dasharray: 0 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+    opacity: 0;
+  }
+}
+
+@keyframes volcanic-shimmer {
+  0%, 100% {
+    opacity: 0.1;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes volcanic-drop {
+  0% {
+    transform: translateY(-50px) scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(100px) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(150px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes volcanic-spark {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes volcanic-eruption-core {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.5) saturate(1.8);
+    box-shadow: 0 0 40px rgba(251, 146, 60, 0.9);
+  }
+}
+
+@keyframes volcanic-eruption-particle {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-300px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes volcanic-progress {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes volcanic-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes volcanic-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotateY(0deg);
+  }
+}
+
+@keyframes volcanic-count {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes volcanic-signal {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
