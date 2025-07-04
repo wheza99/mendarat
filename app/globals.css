@@ -2138,3 +2138,282 @@
     transform: scale(1.02);
   }
 }
+
+/* Theme 57 - Quantum Void Animations */
+@layer utilities {
+  .animate-void-float { animation: void-float 6s ease-in-out infinite; }
+  .animate-void-drift { animation: void-drift 8s ease-in-out infinite; }
+  .animate-void-spiral { animation: void-spiral 10s linear infinite; }
+  .animate-void-pulse { animation: void-pulse 4s ease-in-out infinite; }
+  .animate-void-spin { animation: void-spin 20s linear infinite; }
+  .animate-void-wave { animation: void-wave 12s ease-in-out infinite; }
+  .animate-void-flow { animation: void-flow 8s linear infinite; }
+  .animate-void-crystal { animation: void-crystal 5s ease-in-out infinite; }
+  .animate-void-gradient { animation: void-gradient 8s ease-in-out infinite; }
+  .animate-void-progress { animation: void-progress 3s ease-out infinite; }
+  .animate-void-fade-in { animation: void-fade-in 1s ease-out forwards; }
+  .animate-void-slide-in { animation: void-slide-in 1s ease-out forwards; }
+  .animate-void-fade { animation: void-fade 3s ease-in-out infinite; }
+}
+
+/* Void Float Animation */
+@keyframes void-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-25px) scale(1.1) rotate(90deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-40px) scale(0.95) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-20px) scale(1.05) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+/* Void Drift Animation */
+@keyframes void-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateX(35px) translateY(-25px) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-25px) translateY(-45px) rotate(90deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(40px) translateY(-15px) rotate(135deg);
+    opacity: 0.7;
+  }
+}
+
+/* Void Spiral Animation */
+@keyframes void-spiral {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateX(20px) rotate(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(0px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-20px) rotate(270deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0px) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+/* Void Pulse Animation */
+@keyframes void-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+/* Void Spin Animation */
+@keyframes void-spin {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Void Wave Animation */
+@keyframes void-wave {
+  0%, 100% {
+    transform: scaleY(1) translateY(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: scaleY(1.3) translateY(-10px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleY(0.8) translateY(-20px);
+    opacity: 1;
+  }
+  75% {
+    transform: scaleY(1.1) translateY(-5px);
+    opacity: 0.9;
+  }
+}
+
+/* Void Flow Animation */
+@keyframes void-flow {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  25% {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Void Crystal Animation */
+@keyframes void-crystal {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1) saturate(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    filter: brightness(1.3) saturate(1.2);
+    opacity: 0.9;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+    filter: brightness(1.5) saturate(1.5);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+    filter: brightness(1.2) saturate(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Void Gradient Animation */
+@keyframes void-gradient {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 25%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 75% 75%;
+  }
+}
+
+/* Void Progress Animation */
+@keyframes void-progress {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+/* Void Fade In Animation */
+@keyframes void-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Void Slide In Animation */
+@keyframes void-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotateY(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotateY(0deg);
+  }
+}
+
+/* Void Fade Animation */
+@keyframes void-fade {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Void Grid Animation */
+@keyframes void-grid {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(-5px) translateY(-10px);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateX(8px) translateY(-3px);
+    opacity: 0.18;
+  }
+}
