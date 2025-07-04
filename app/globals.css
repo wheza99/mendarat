@@ -1845,3 +1845,296 @@
     transform: translate(1px, -2px);
   }
 }
+
+/* Theme 56 - Arctic Synth Animations */
+@layer utilities {
+  .animate-arctic-float { animation: arctic-float 6s ease-in-out infinite; }
+  .animate-arctic-drift { animation: arctic-drift 8s ease-in-out infinite; }
+  .animate-arctic-spiral { animation: arctic-spiral 10s linear infinite; }
+  .animate-arctic-pulse { animation: arctic-pulse 4s ease-in-out infinite; }
+  .animate-arctic-spin { animation: arctic-spin 20s linear infinite; }
+  .animate-arctic-wave { animation: arctic-wave 12s ease-in-out infinite; }
+  .animate-arctic-flow { animation: arctic-flow 8s linear infinite; }
+  .animate-arctic-grow { animation: arctic-grow 3s ease-out infinite; }
+  .animate-arctic-crystal { animation: arctic-crystal 5s ease-in-out infinite; }
+  .animate-arctic-gradient { animation: arctic-gradient 8s ease-in-out infinite; }
+  .animate-arctic-progress { animation: arctic-progress 3s ease-out infinite; }
+  .animate-arctic-fade-in { animation: arctic-fade-in 1s ease-out forwards; }
+  .animate-arctic-slide-in { animation: arctic-slide-in 1s ease-out forwards; }
+  .animate-arctic-aurora { animation: arctic-aurora 15s ease-in-out infinite; }
+  .animate-arctic-freeze { animation: arctic-freeze 6s ease-in-out infinite; }
+}
+
+/* Arctic Float Animation */
+@keyframes arctic-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) scale(1.1) rotate(5deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-35px) scale(0.95) rotate(-3deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-15px) scale(1.05) rotate(2deg);
+    opacity: 0.8;
+  }
+}
+
+/* Arctic Drift Animation */
+@keyframes arctic-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(25px) translateY(-20px) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-20px) translateY(-40px) rotate(90deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(30px) translateY(-10px) rotate(135deg);
+    opacity: 0.7;
+  }
+}
+
+/* Arctic Spiral Animation */
+@keyframes arctic-spiral {
+  0% {
+    transform: rotate(0deg) translateX(0px) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: rotate(90deg) translateX(15px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) translateX(25px) scale(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(270deg) translateX(20px) scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px) scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Arctic Pulse Animation */
+@keyframes arctic-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.5);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.03);
+    filter: brightness(1.1);
+  }
+}
+
+/* Arctic Spin Animation */
+@keyframes arctic-spin {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Arctic Wave Animation */
+@keyframes arctic-wave {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) scaleY(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-25px) scaleY(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-10px) scaleY(1.05);
+    opacity: 0.7;
+  }
+}
+
+/* Arctic Flow Animation */
+@keyframes arctic-flow {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Arctic Grow Animation */
+@keyframes arctic-grow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Arctic Crystal Animation */
+@keyframes arctic-crystal {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.1) rotate(90deg);
+    opacity: 0.9;
+    filter: brightness(1.3);
+  }
+  50% {
+    transform: scale(0.95) rotate(180deg);
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+  75% {
+    transform: scale(1.05) rotate(270deg);
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+/* Arctic Gradient Animation */
+@keyframes arctic-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 25%;
+  }
+  50% {
+    background-position: 100% 75%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Arctic Progress Animation */
+@keyframes arctic-progress {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+/* Arctic Fade In Animation */
+@keyframes arctic-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Arctic Slide In Animation */
+@keyframes arctic-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Arctic Aurora Animation */
+@keyframes arctic-aurora {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+}
+
+/* Arctic Freeze Animation */
+@keyframes arctic-freeze {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
