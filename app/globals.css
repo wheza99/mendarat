@@ -4758,3 +4758,203 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Synthwave Theme 69 Animations */
+@keyframes synthwave-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes synthwave-neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    border-color: currentColor;
+  }
+  50% {
+    box-shadow: 0 0 15px currentColor, 0 0 25px currentColor, 0 0 35px currentColor, 0 0 45px currentColor;
+    border-color: currentColor;
+  }
+}
+
+@keyframes synthwave-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes synthwave-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@keyframes synthwave-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes synthwave-chrome-text {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes synthwave-progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress-width, 100%);
+  }
+}
+
+@keyframes synthwave-bars {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes synthwave-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes synthwave-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes synthwave-sun {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes synthwave-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes synthwave-atmosphere {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes synthwave-crt {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.animate-synthwave-glow {
+  animation: synthwave-glow 2s ease-in-out infinite;
+}
+
+.animate-synthwave-neon-pulse {
+  animation: synthwave-neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-synthwave-pulse {
+  animation: synthwave-pulse 2s ease-in-out infinite;
+}
+
+.animate-synthwave-float {
+  animation: synthwave-float 4s ease-in-out infinite;
+}
+
+.animate-synthwave-fade-in {
+  animation: synthwave-fade-in 1s ease-out forwards;
+}
+
+.animate-synthwave-chrome-text {
+  background-size: 200% 200%;
+  animation: synthwave-chrome-text 3s ease-in-out infinite;
+}
+
+.animate-synthwave-progress {
+  animation: synthwave-progress 2s ease-out forwards;
+}
+
+.animate-synthwave-bars {
+  animation: synthwave-bars 1.5s ease-in-out infinite;
+}
+
+.animate-synthwave-spin {
+  animation: synthwave-spin 20s linear infinite;
+}
+
+.animate-synthwave-scroll {
+  animation: synthwave-scroll 2s ease-in-out infinite;
+}
+
+.animate-synthwave-sun {
+  animation: synthwave-sun 4s ease-in-out infinite;
+}
+
+.animate-synthwave-scanlines {
+  animation: synthwave-scanlines 3s linear infinite;
+}
+
+.animate-synthwave-atmosphere {
+  animation: synthwave-atmosphere 5s ease-in-out infinite;
+}
+
+.animate-synthwave-crt {
+  animation: synthwave-crt 0.1s ease-in-out infinite alternate;
+}
