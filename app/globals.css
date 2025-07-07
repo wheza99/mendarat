@@ -5406,3 +5406,230 @@
     transform: translateY(100%);
   }
 }
+
+/* Art Deco Neon Theme 73 - Animations */
+@layer utilities {
+  .animate-art-deco-scan {
+    animation: art-deco-scan 8s linear infinite;
+  }
+  
+  .animate-art-deco-scan-reverse {
+    animation: art-deco-scan-reverse 10s linear infinite;
+  }
+  
+  .animate-art-deco-float {
+    animation: art-deco-float 6s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-ray {
+    animation: art-deco-ray 4s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-card {
+    animation: art-deco-card 0.8s ease-out forwards;
+  }
+  
+  .animate-neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-bars {
+    animation: neon-bars 1.5s ease-in-out infinite;
+  }
+  
+  .animate-neon-text {
+    animation: neon-text 3s ease-in-out infinite;
+  }
+  
+  .animate-neon-button {
+    animation: neon-button 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-reflection {
+    animation: neon-reflection 4s ease-in-out infinite;
+  }
+  
+  .animate-neon-glow {
+    animation: neon-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-border {
+    animation: neon-border 3s ease-in-out infinite;
+  }
+  
+  .animate-neon-particle {
+    animation: neon-particle 8s linear infinite;
+  }
+  
+  .animate-neon-scan {
+    animation: neon-scan 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-scanlines {
+    animation: neon-scanlines 3s linear infinite;
+  }
+  
+  .animate-neon-atmosphere {
+    animation: neon-atmosphere 5s ease-in-out infinite;
+  }
+}
+
+@keyframes art-deco-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes art-deco-scan-reverse {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes art-deco-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+}
+
+@keyframes art-deco-ray {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
+}
+
+@keyframes art-deco-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes neon-bars {
+  0%, 100% {
+    transform: scaleY(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes neon-text {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor);
+  }
+}
+
+@keyframes neon-button {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.6);
+  }
+}
+
+@keyframes neon-reflection {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes neon-border {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes neon-particle {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes neon-scan {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes neon-atmosphere {
+  0%, 100% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.05;
+  }
+}
