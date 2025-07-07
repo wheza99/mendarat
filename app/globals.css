@@ -5876,3 +5876,114 @@
     transform: scaleY(1.2);
   }
 }
+
+/* Art Deco Neon Theme 75 - Art Deco Animations */
+@layer utilities {
+  .animate-art-deco-gear {
+    animation: art-deco-gear 20s linear infinite;
+  }
+  
+  .animate-art-deco-flow {
+    animation: art-deco-flow 15s linear infinite;
+  }
+  
+  .animate-art-deco-float {
+    animation: art-deco-float 6s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-ray {
+    animation: art-deco-ray 8s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-scan {
+    animation: art-deco-scan 4s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-scan-reverse {
+    animation: art-deco-scan-reverse 4s ease-in-out infinite;
+  }
+  
+  .animate-art-deco-card {
+    animation: art-deco-card 3s ease-out forwards;
+  }
+}
+
+@keyframes art-deco-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes art-deco-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes art-deco-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes art-deco-ray {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1.2);
+  }
+}
+
+@keyframes art-deco-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes art-deco-scan-reverse {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes art-deco-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
