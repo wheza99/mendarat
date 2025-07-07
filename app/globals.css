@@ -94,6 +94,10 @@
   .bg-gradient-radial {
     background: radial-gradient(circle, var(--tw-gradient-stops));
   }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
 
 /* Organic Theme 29 - Nature Animations */
@@ -3971,6 +3975,74 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: cosmic-text 6s ease-in-out infinite;
+}
+
+/* Theme 67 - Cosmic Minimalism Animations */
+@layer utilities {
+  .animate-cosmic-orbit { animation: cosmic-orbit 25s linear infinite; }
+  .animate-cosmic-orbit-reverse { animation: cosmic-orbit 20s linear infinite reverse; }
+  .animate-cosmic-orbit-slow { animation: cosmic-orbit 40s linear infinite; }
+  .animate-cosmic-orbit-slower { animation: cosmic-orbit 60s linear infinite; }
+  .animate-cosmic-orbit-slowest { animation: cosmic-orbit 80s linear infinite; }
+  .animate-cosmic-spin { animation: cosmic-spin 15s linear infinite; }
+  .animate-cosmic-pulse { animation: cosmic-pulse 4s ease-in-out infinite; }
+  .animate-cosmic-float { animation: cosmic-float 8s ease-in-out infinite; }
+  .animate-cosmic-drift { animation: cosmic-drift 12s ease-in-out infinite; }
+  .animate-cosmic-drift-reverse { animation: cosmic-drift 10s ease-in-out infinite reverse; }
+  .animate-cosmic-twinkle { animation: cosmic-twinkle 2s ease-in-out infinite; }
+  .animate-cosmic-particle { animation: cosmic-particle 20s linear infinite; }
+  .animate-cosmic-constellation { animation: cosmic-constellation 8s ease-in-out infinite; }
+  .animate-cosmic-constellation-delayed { animation: cosmic-constellation 8s ease-in-out infinite 2s; }
+  .animate-cosmic-ambient { animation: cosmic-ambient 15s ease-in-out infinite; }
+  .animate-cosmic-aurora { animation: cosmic-aurora 20s ease-in-out infinite; }
+}
+
+@keyframes cosmic-particle {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cosmic-constellation {
+  0%, 100% {
+    opacity: 0.3;
+    stroke-dasharray: 0, 100;
+  }
+  50% {
+    opacity: 0.8;
+    stroke-dasharray: 50, 50;
+  }
+}
+
+@keyframes cosmic-ambient {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes cosmic-aurora {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.1;
+    transform: translateX(100%);
+  }
 }
 
 /* Theme 63 - Digital Renaissance Animations */
