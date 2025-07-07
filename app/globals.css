@@ -6098,3 +6098,95 @@
     transform: translateY(0) scale(1);
   }
 }
+
+/* Art Deco Neon Theme 77 - Additional Animations */
+@layer utilities {
+  .animate-art-deco-sweep {
+    animation: art-deco-sweep 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-spin {
+    animation: neon-spin 3s linear infinite;
+  }
+  
+  .animate-neon-particle {
+    animation: neon-particle 10s linear infinite;
+  }
+  
+  .animate-neon-border {
+    animation: neon-border 4s ease-in-out infinite;
+  }
+  
+  .animate-neon-scanlines {
+    animation: neon-scanlines 2s linear infinite;
+  }
+  
+  .animate-neon-atmosphere {
+    animation: neon-atmosphere 6s ease-in-out infinite;
+  }
+}
+
+@keyframes art-deco-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes neon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neon-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+@keyframes neon-border {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes neon-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes neon-atmosphere {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
