@@ -1,0 +1,219 @@
+/* Cyberpunk Animations */
+
+@keyframes cyber-grid {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(100px) translateY(100px);
+  }
+}
+
+@keyframes cyber-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+  }
+}
+
+@keyframes cyber-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cyber-ray {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes cyber-particle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes cyber-border {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes cyber-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cyber-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes cyber-glitch {
+  0%, 100% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes cyber-atmosphere {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes cyber-noise {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0%);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* Animation Classes */
+.animate-cyber-grid {
+  animation: cyber-grid 20s linear infinite;
+}
+
+.animate-cyber-float {
+  animation: cyber-float 6s ease-in-out infinite;
+}
+
+.animate-cyber-spin {
+  animation: cyber-spin 4s linear infinite;
+}
+
+.animate-cyber-ray {
+  animation: cyber-ray 2s ease-in-out infinite;
+}
+
+.animate-cyber-particle {
+  animation: cyber-particle 8s ease-in-out infinite;
+}
+
+.animate-cyber-border {
+  animation: cyber-border 3s ease-in-out infinite;
+}
+
+.animate-cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+.animate-cyber-scanlines {
+  animation: cyber-scanlines 4s linear infinite;
+}
+
+.animate-cyber-glitch {
+  animation: cyber-glitch 0.5s ease-in-out infinite;
+}
+
+.animate-cyber-atmosphere {
+  animation: cyber-atmosphere 4s ease-in-out infinite;
+}
+
+.animate-cyber-noise {
+  animation: cyber-noise 0.1s linear infinite;
+} 

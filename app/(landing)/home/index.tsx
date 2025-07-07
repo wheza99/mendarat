@@ -12,6 +12,7 @@ import Theme79 from './theme-79';
 import Theme80 from './theme-80';
 import Theme81 from './theme-81';
 import Theme82 from './theme-82';
+import Theme83 from './theme-83';
 
 // Dynamic imports for all themes with error handling
 const HomePageTheme1 = lazy(() => import("./theme-1"));
@@ -293,8 +294,14 @@ const HomePageTheme82 = lazy(() =>
     return import("./theme-1");
   })
 );
+const HomePageTheme83 = lazy(() => 
+  import("./theme-83").catch(() => {
+    console.warn("Theme 83 failed to load, falling back to Theme 1");
+    return import("./theme-1");
+  })
+);
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12" | "theme-13" | "theme-14" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43" | "theme-44" | "theme-45" | "theme-46" | "theme-47" | "theme-48" | "theme-49" | "theme-50" | "theme-51" | "theme-52" | "theme-53" | "theme-54" | "theme-55" | "theme-56" | "theme-57" | "theme-58" | "theme-59" | "theme-60" | "theme-61" | "theme-62" | "theme-63" | "theme-64" | "theme-65" | "theme-66" | "theme-67" | "theme-68" | "theme-69" | "theme-70" | "theme-71" | "theme-72" | "theme-73" | "theme-74" | "theme-75" | "theme-76" | "theme-77" | "theme-78" | "theme-79" | "theme-80" | "theme-81" | "theme-82";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12" | "theme-13" | "theme-14" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43" | "theme-44" | "theme-45" | "theme-46" | "theme-47" | "theme-48" | "theme-49" | "theme-50" | "theme-51" | "theme-52" | "theme-53" | "theme-54" | "theme-55" | "theme-56" | "theme-57" | "theme-58" | "theme-59" | "theme-60" | "theme-61" | "theme-62" | "theme-63" | "theme-64" | "theme-65" | "theme-66" | "theme-67" | "theme-68" | "theme-69" | "theme-70" | "theme-71" | "theme-72" | "theme-73" | "theme-74" | "theme-75" | "theme-76" | "theme-77" | "theme-78" | "theme-79" | "theme-80" | "theme-81" | "theme-82" | "theme-83";
 
 // Loading component for Suspense fallback
 const LoadingFallback = () => (
@@ -481,6 +488,8 @@ export default function HomePage() {
         return <HomePageTheme81 />;
       case "theme-82":
         return <HomePageTheme82 />;
+      case "theme-83":
+        return <HomePageTheme83 />;
       default:
         return <HomePageTheme1 />;
     }
