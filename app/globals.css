@@ -6820,3 +6820,196 @@
     opacity: 1;
   }
 }
+
+/* Theme 81 - Neon Noir Cyberpunk Animations */
+@layer utilities {
+  .animate-noir-pulse { animation: noir-pulse 3s ease-in-out infinite; }
+  .animate-noir-spin { animation: noir-spin 8s linear infinite; }
+  .animate-noir-float { animation: noir-float 6s ease-in-out infinite; }
+  .animate-noir-gear { animation: noir-gear 20s linear infinite; }
+  .animate-noir-flow { animation: noir-flow 15s ease-in-out infinite; }
+  .animate-noir-ray { animation: noir-ray 4s ease-in-out infinite; }
+  .animate-noir-particle { animation: noir-particle 12s linear infinite; }
+  .animate-noir-border { animation: noir-border 8s ease-in-out infinite; }
+  .animate-noir-scanlines { animation: noir-scanlines 3s linear infinite; }
+  .animate-noir-atmosphere { animation: noir-atmosphere 10s ease-in-out infinite; }
+  .animate-noir-morph { animation: noir-morph 5s ease-in-out infinite; }
+  .animate-noir-morph-1 { animation: noir-morph-1 6s ease-in-out infinite; }
+  .animate-noir-morph-2 { animation: noir-morph-2 7s ease-in-out infinite; }
+  .animate-noir-morph-3 { animation: noir-morph-3 8s ease-in-out infinite; }
+  .animate-noir-sweep { animation: noir-sweep 4s ease-in-out infinite; }
+}
+
+@keyframes noir-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes noir-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes noir-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes noir-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes noir-flow {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  50% {
+    transform: translateX(0%) translateY(0%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+@keyframes noir-ray {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes noir-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+@keyframes noir-border {
+  0% {
+    opacity: 0.3;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes noir-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes noir-atmosphere {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes noir-morph {
+  0%, 100% {
+    border-radius: 8px;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 50%;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes noir-morph-1 {
+  0%, 100% {
+    border-radius: 8px;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 25%;
+    transform: scale(1.05) rotate(180deg);
+  }
+}
+
+@keyframes noir-morph-2 {
+  0%, 100% {
+    border-radius: 8px;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 50%;
+    transform: scale(1.1) rotate(90deg);
+  }
+}
+
+@keyframes noir-morph-3 {
+  0%, 100% {
+    border-radius: 8px;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 15%;
+    transform: scale(1.08) rotate(270deg);
+  }
+}
+
+@keyframes noir-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
