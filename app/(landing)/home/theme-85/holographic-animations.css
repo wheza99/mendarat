@@ -1,0 +1,340 @@
+/* Holographic Animations for Theme 85 */
+
+@keyframes holographic-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes holographic-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(270deg);
+  }
+}
+
+@keyframes holographic-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes holographic-grid {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(300px) translateY(300px);
+  }
+}
+
+@keyframes holographic-flow {
+  0% {
+    transform: translateX(-200px) translateY(-200px);
+  }
+  100% {
+    transform: translateX(200px) translateY(200px);
+  }
+}
+
+@keyframes holographic-ray {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+@keyframes holographic-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-100px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(0);
+  }
+}
+
+@keyframes holographic-border {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes holographic-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes holographic-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes holographic-noise {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(3px) translateY(3px);
+  }
+}
+
+@keyframes holographic-atmosphere {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+/* Animation Classes */
+.animate-holographic-pulse {
+  animation: holographic-pulse 2s ease-in-out infinite;
+}
+
+.animate-holographic-float {
+  animation: holographic-float 8s ease-in-out infinite;
+}
+
+.animate-holographic-spin {
+  animation: holographic-spin 4s linear infinite;
+}
+
+.animate-holographic-grid {
+  animation: holographic-grid 20s linear infinite;
+}
+
+.animate-holographic-flow {
+  animation: holographic-flow 15s linear infinite;
+}
+
+.animate-holographic-ray {
+  animation: holographic-ray 3s ease-in-out infinite;
+}
+
+.animate-holographic-particle {
+  animation: holographic-particle 12s ease-in-out infinite;
+}
+
+.animate-holographic-border {
+  animation: holographic-border 4s ease-in-out infinite;
+}
+
+.animate-holographic-gear {
+  animation: holographic-gear 30s linear infinite;
+}
+
+.animate-holographic-scanlines {
+  animation: holographic-scanlines 8s linear infinite;
+}
+
+.animate-holographic-noise {
+  animation: holographic-noise 0.1s linear infinite;
+}
+
+.animate-holographic-atmosphere {
+  animation: holographic-atmosphere 6s ease-in-out infinite;
+}
+
+/* Glassmorphism Effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Holographic Glow Effects */
+.holographic-glow {
+  box-shadow: 
+    0 0 20px rgba(99, 102, 241, 0.3),
+    0 0 40px rgba(168, 85, 247, 0.2),
+    0 0 60px rgba(236, 72, 153, 0.1);
+}
+
+.holographic-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(99, 102, 241, 0.5),
+    0 0 60px rgba(168, 85, 247, 0.3),
+    0 0 90px rgba(236, 72, 153, 0.2);
+}
+
+/* Holographic Text Effects */
+.holographic-text {
+  background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic-flow 3s ease-in-out infinite;
+}
+
+/* Holographic Border Effects */
+.holographic-border {
+  position: relative;
+}
+
+.holographic-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899, #6366f1);
+  border-radius: inherit;
+  z-index: -1;
+  animation: holographic-spin 4s linear infinite;
+}
+
+/* Responsive Holographic Effects */
+@media (max-width: 768px) {
+  .animate-holographic-float {
+    animation-duration: 6s;
+  }
+  
+  .animate-holographic-spin {
+    animation-duration: 3s;
+  }
+  
+  .animate-holographic-grid {
+    animation-duration: 15s;
+  }
+}
+
+/* Holographic Loading Animation */
+.holographic-loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.holographic-loading::before,
+.holographic-loading::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: holographic-pulse 2s ease-in-out infinite;
+}
+
+.holographic-loading::before {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  animation-delay: 0s;
+}
+
+.holographic-loading::after {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  animation-delay: 0.5s;
+}
+
+/* Holographic Button Effects */
+.holographic-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.holographic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.holographic-button:hover::before {
+  left: 100%;
+}
+
+/* Holographic Card Effects */
+.holographic-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.holographic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 30px rgba(99, 102, 241, 0.3),
+    0 20px 60px rgba(168, 85, 247, 0.2);
+}
+
+/* Holographic Input Effects */
+.holographic-input {
+  transition: all 0.3s ease;
+}
+
+.holographic-input:focus {
+  box-shadow: 
+    0 0 0 2px rgba(99, 102, 241, 0.5),
+    0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Holographic Text Selection */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: white;
+} 
