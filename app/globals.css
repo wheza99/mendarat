@@ -5633,3 +5633,246 @@
     opacity: 0.05;
   }
 }
+
+/* Steampunk Industrial Theme 74 - Steam Animations */
+@layer utilities {
+  .animate-steam-pulse {
+    animation: steam-pulse 2s ease-in-out infinite;
+  }
+  
+  .animate-steam-spin {
+    animation: steam-spin 4s linear infinite;
+  }
+  
+  .animate-steam-float {
+    animation: steam-float 6s ease-in-out infinite;
+  }
+  
+  .animate-steam-gear {
+    animation: steam-gear 20s linear infinite;
+  }
+  
+  .animate-steam-flow {
+    animation: steam-flow 15s linear infinite;
+  }
+  
+  .animate-steam-pipe {
+    animation: steam-pipe 8s ease-in-out infinite;
+  }
+  
+  .animate-steam-particle {
+    animation: steam-particle 12s linear infinite;
+  }
+  
+  .animate-steam-border {
+    animation: steam-border 10s linear infinite;
+  }
+  
+  .animate-steam-scan {
+    animation: steam-scan 4s ease-in-out infinite;
+  }
+  
+  .animate-steam-scanlines {
+    animation: steam-scanlines 3s linear infinite;
+  }
+  
+  .animate-steam-atmosphere {
+    animation: steam-atmosphere 8s ease-in-out infinite;
+  }
+  
+  .animate-steam-text {
+    animation: steam-text 6s ease-in-out infinite;
+  }
+  
+  .animate-steam-button {
+    animation: steam-button 3s ease-in-out infinite;
+  }
+  
+  .animate-steam-reflection {
+    animation: steam-reflection 4s ease-in-out infinite;
+  }
+  
+  .animate-steam-glow {
+    animation: steam-glow 5s ease-in-out infinite;
+  }
+  
+  .animate-steam-bars {
+    animation: steam-bars 2s ease-in-out infinite;
+  }
+}
+
+@keyframes steam-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes steam-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes steam-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes steam-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes steam-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes steam-pipe {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1.2);
+  }
+}
+
+@keyframes steam-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-60px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
+
+@keyframes steam-border {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes steam-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes steam-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes steam-atmosphere {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes steam-text {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes steam-button {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+  }
+}
+
+@keyframes steam-reflection {
+  0% {
+    opacity: 0.1;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.1;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes steam-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes steam-bars {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
+}
