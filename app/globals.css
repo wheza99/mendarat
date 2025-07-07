@@ -4958,3 +4958,222 @@
 .animate-synthwave-crt {
   animation: synthwave-crt 0.1s ease-in-out infinite alternate;
 }
+
+/* Noir Theme 71 - Film Noir Cyberpunk Animations */
+@layer utilities {
+  .animate-noir-flicker {
+    animation: noir-flicker 2s ease-in-out infinite;
+  }
+  
+  .animate-noir-pulse {
+    animation: noir-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-noir-float {
+    animation: noir-float 6s ease-in-out infinite;
+  }
+  
+  .animate-noir-fade-in {
+    animation: noir-fade-in 1s ease-out forwards;
+  }
+  
+  .animate-noir-fade-in-delayed {
+    animation: noir-fade-in 1s ease-out forwards 0.2s;
+    opacity: 0;
+  }
+  
+  .animate-noir-fade-in-delayed-2 {
+    animation: noir-fade-in 1s ease-out forwards 0.4s;
+    opacity: 0;
+  }
+  
+  .animate-noir-fade-in-delayed-3 {
+    animation: noir-fade-in 1s ease-out forwards 0.6s;
+    opacity: 0;
+  }
+  
+  .animate-noir-fade-in-delayed-4 {
+    animation: noir-fade-in 1s ease-out forwards 0.8s;
+    opacity: 0;
+  }
+  
+  .animate-noir-bars {
+    animation: noir-bars 1.5s ease-in-out infinite;
+  }
+  
+  .animate-noir-scan {
+    animation: noir-scan 3s linear infinite;
+  }
+  
+  .animate-noir-rain {
+    animation: noir-rain 2s linear infinite;
+  }
+  
+  .animate-noir-reflection {
+    animation: noir-reflection 4s ease-in-out infinite;
+  }
+  
+  .animate-noir-reflection-reverse {
+    animation: noir-reflection 4s ease-in-out infinite reverse;
+  }
+  
+  .animate-noir-shadow {
+    animation: noir-shadow 5s ease-in-out infinite;
+  }
+  
+  .animate-noir-puddle {
+    animation: noir-puddle 3s ease-in-out infinite;
+  }
+  
+  .animate-noir-scanlines {
+    animation: noir-scanlines 2s linear infinite;
+  }
+  
+  .animate-noir-atmosphere {
+    animation: noir-atmosphere 8s ease-in-out infinite;
+  }
+  
+  .animate-noir-count {
+    animation: noir-count 2s ease-out forwards;
+  }
+}
+
+@keyframes noir-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  75% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes noir-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes noir-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes noir-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes noir-bars {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.3);
+  }
+}
+
+@keyframes noir-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes noir-rain {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes noir-reflection {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes noir-shadow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes noir-puddle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes noir-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes noir-atmosphere {
+  0%, 100% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.05;
+  }
+}
+
+@keyframes noir-count {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
