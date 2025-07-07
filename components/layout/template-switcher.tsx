@@ -23,7 +23,7 @@ export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherPr
     "theme-56", "theme-57", "theme-58", "theme-59", "theme-60", 
     "theme-61", "theme-62", "theme-63", "theme-64", "theme-65", 
     "theme-66", "theme-67", "theme-68", "theme-69", "theme-70", 
-    "theme-71", "theme-72", "theme-73", "theme-74", "theme-75"
+    "theme-71", "theme-72", "theme-73", "theme-74", "theme-75", "theme-76"
   ];
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
