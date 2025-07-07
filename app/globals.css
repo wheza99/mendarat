@@ -5627,10 +5627,10 @@
 
 @keyframes neon-atmosphere {
   0%, 100% {
-    opacity: 0.02;
+    opacity: 0.1;
   }
   50% {
-    opacity: 0.05;
+    opacity: 0.3;
   }
 }
 
@@ -6390,5 +6390,219 @@
   100% {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+
+/* Art Deco Neon Theme 79 - Art Deco Neon Gradient Animations */
+@layer utilities {
+  .animate-deco-pulse { animation: deco-pulse 3s ease-in-out infinite; }
+  .animate-deco-spin { animation: deco-spin 8s linear infinite; }
+  .animate-deco-float { animation: deco-float 6s ease-in-out infinite; }
+  .animate-deco-gear { animation: deco-gear 20s linear infinite; }
+  .animate-deco-flow { animation: deco-flow 15s ease-in-out infinite; }
+  .animate-deco-ray { animation: deco-ray 4s ease-in-out infinite; }
+  .animate-deco-particle { animation: deco-particle 12s linear infinite; }
+  .animate-deco-border { animation: deco-border 8s ease-in-out infinite; }
+  .animate-deco-scanlines { animation: deco-scanlines 3s linear infinite; }
+  .animate-deco-atmosphere { animation: deco-atmosphere 10s ease-in-out infinite; }
+  .animate-deco-morph { animation: deco-morph 5s ease-in-out infinite; }
+  .animate-deco-morph-1 { animation: deco-morph-1 6s ease-in-out infinite; }
+  .animate-deco-morph-2 { animation: deco-morph-2 7s ease-in-out infinite; }
+  .animate-deco-morph-3 { animation: deco-morph-3 8s ease-in-out infinite; }
+  .animate-deco-sweep { animation: deco-sweep 4s ease-in-out infinite; }
+  .animate-deco-fold { animation: deco-fold 3s ease-in-out infinite; }
+}
+
+@keyframes deco-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes deco-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes deco-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+@keyframes deco-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes deco-flow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes deco-ray {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1.2);
+  }
+}
+
+@keyframes deco-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+@keyframes deco-border {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes deco-scanlines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes deco-atmosphere {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes deco-morph {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 0.5rem;
+  }
+  25% {
+    transform: scale(1.1) rotate(90deg);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(0.9) rotate(180deg);
+    border-radius: 0.25rem;
+  }
+  75% {
+    transform: scale(1.05) rotate(270deg);
+    border-radius: 0.75rem;
+  }
+}
+
+@keyframes deco-morph-1 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    transform: scale(1.2) rotate(120deg);
+  }
+  66% {
+    transform: scale(0.8) rotate(240deg);
+  }
+}
+
+@keyframes deco-morph-2 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.15) rotate(90deg);
+  }
+  50% {
+    transform: scale(0.85) rotate(180deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
+@keyframes deco-morph-3 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.25) rotate(72deg);
+  }
+  40% {
+    transform: scale(0.75) rotate(144deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(216deg);
+  }
+  80% {
+    transform: scale(0.9) rotate(288deg);
+  }
+}
+
+@keyframes deco-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes deco-fold {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleY(0.5);
+    opacity: 1;
   }
 }
