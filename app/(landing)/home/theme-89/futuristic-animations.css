@@ -1,0 +1,239 @@
+/* Futuristic Minimalist Theme Animations */
+
+/* Gradient Text Effect */
+.gradient-text-futuristic {
+  background: linear-gradient(135deg, #3b82f6, #0ea5e9, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon Text Effects */
+.neon-text-blue {
+  text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6;
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 30px #0ea5e9;
+}
+
+/* Futuristic Button */
+.btn-futuristic {
+  background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-futuristic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+/* Futuristic Glass Card */
+.futuristic-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+}
+
+.futuristic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Futuristic Glass Input */
+.futuristic-input {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.futuristic-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Floating Animation */
+@keyframes futuristic-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+.animate-futuristic-float {
+  animation: futuristic-float 6s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes futuristic-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-futuristic-pulse {
+  animation: futuristic-pulse 2s ease-in-out infinite;
+}
+
+/* Particle Animation */
+@keyframes futuristic-particle {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.animate-futuristic-particle {
+  animation: futuristic-particle 8s linear infinite;
+}
+
+/* Border Animation */
+@keyframes futuristic-border {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animate-futuristic-border {
+  animation: futuristic-border 3s ease-in-out infinite;
+}
+
+/* Gear Rotation */
+@keyframes futuristic-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-futuristic-gear {
+  animation: futuristic-gear 20s linear infinite;
+}
+
+/* Flow Animation */
+@keyframes futuristic-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-futuristic-flow {
+  animation: futuristic-flow 15s linear infinite;
+}
+
+/* Atmosphere Animation */
+@keyframes futuristic-atmosphere {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-futuristic-atmosphere {
+  animation: futuristic-atmosphere 4s ease-in-out infinite;
+}
+
+/* Noise Animation */
+@keyframes futuristic-noise {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(3px) translateY(3px);
+  }
+}
+
+.animate-futuristic-noise {
+  animation: futuristic-noise 0.1s linear infinite;
+}
+
+/* Hover Effects */
+.futuristic-card:hover .animate-futuristic-pulse {
+  animation-duration: 1s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .animate-futuristic-float {
+    animation-duration: 4s;
+  }
+  
+  .animate-futuristic-pulse {
+    animation-duration: 1.5s;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-futuristic-float,
+  .animate-futuristic-pulse,
+  .animate-futuristic-particle,
+  .animate-futuristic-border,
+  .animate-futuristic-gear,
+  .animate-futuristic-flow,
+  .animate-futuristic-atmosphere,
+  .animate-futuristic-noise {
+    animation: none;
+  }
+} 
