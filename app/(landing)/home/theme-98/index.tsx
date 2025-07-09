@@ -1,20 +1,10 @@
-import React, { Suspense, lazy } from 'react';
-
-const NewsHero = lazy(() => import('./components/news-hero'));
-const EditorialFeatures = lazy(() => import('./components/editorial-features'));
-const NewsShowcase = lazy(() => import('./components/news-showcase'));
-const EditorialServices = lazy(() => import('./components/editorial-services'));
-const NewsPricing = lazy(() => import('./components/news-pricing'));
-const EditorialContact = lazy(() => import('./components/editorial-contact'));
-
-const NewsLoader = () => (
-  <div className="flex items-center justify-center min-h-[300px] bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
-    <div className="flex flex-col items-center">
-      <div className="w-12 h-12 border-4 border-gray-700 border-t-transparent rounded-full animate-spin mb-4"></div>
-      <span className="text-gray-700 font-serif animate-pulse">Loading news...</span>
-    </div>
-  </div>
-);
+import React from 'react';
+import NewsHero from './components/news-hero';
+import EditorialFeatures from './components/editorial-features';
+import NewsShowcase from './components/news-showcase';
+import EditorialServices from './components/editorial-services';
+import NewsPricing from './components/news-pricing';
+import EditorialContact from './components/editorial-contact';
 
 export default function HomePageTheme98() {
   return (
@@ -30,24 +20,12 @@ export default function HomePageTheme98() {
       </div>
       {/* Main Content */}
       <div className="relative z-10">
-        <Suspense fallback={<NewsLoader />}>
-          <NewsHero />
-        </Suspense>
-        <Suspense fallback={<NewsLoader />}>
-          <EditorialFeatures />
-        </Suspense>
-        <Suspense fallback={<NewsLoader />}>
-          <NewsShowcase />
-        </Suspense>
-        <Suspense fallback={<NewsLoader />}>
-          <EditorialServices />
-        </Suspense>
-        <Suspense fallback={<NewsLoader />}>
-          <NewsPricing />
-        </Suspense>
-        <Suspense fallback={<NewsLoader />}>
-          <EditorialContact />
-        </Suspense>
+        <NewsHero />
+        <EditorialFeatures />
+        <NewsShowcase />
+        <EditorialServices />
+        <NewsPricing />
+        <EditorialContact />
       </div>
     </div>
   );
