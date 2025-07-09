@@ -25,7 +25,7 @@ export function TemplateSwitcher({ onThemeChange, activeTheme }: ThemeSwitcherPr
      "theme-66", "theme-67", "theme-68", "theme-69", "theme-70", 
      "theme-71", "theme-72", "theme-73", "theme-74", "theme-75", 
      "theme-76", "theme-77", "theme-78", "theme-79", "theme-80", 
-           "theme-81", "theme-82", "theme-83", "theme-84", "theme-85", "theme-86", "theme-87", "theme-88", "theme-89", "theme-90", "theme-91", "theme-92", "theme-93", "theme-94", "theme-95", "theme-96", "theme-97", "theme-98", "theme-99", "theme-100", "theme-101", "theme-102", "theme-103", "theme-104", "theme-105", "theme-106", "theme-107", "theme-108", "theme-109", "theme-110", "theme-111", "theme-112", "theme-113", "theme-114", "theme-115", "theme-116", "theme-117", "theme-118", "theme-119", "theme-120", "theme-121", "theme-122", "theme-123"
+           "theme-81", "theme-82", "theme-83", "theme-84", "theme-85", "theme-86", "theme-87", "theme-88", "theme-89", "theme-90", "theme-91", "theme-92", "theme-93", "theme-94", "theme-95", "theme-96", "theme-97", "theme-98", "theme-99", "theme-100", "theme-101", "theme-102", "theme-103", "theme-104", "theme-105", "theme-106", "theme-107", "theme-108", "theme-109", "theme-110", "theme-111", "theme-112", "theme-113", "theme-114", "theme-115", "theme-116", "theme-117", "theme-118", "theme-119", "theme-120", "theme-121", "theme-122", "theme-123", "theme-124"
   ];
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
