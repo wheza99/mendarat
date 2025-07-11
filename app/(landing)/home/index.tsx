@@ -1,7 +1,7 @@
 "use client";
 
 import { TemplateSwitcher } from "../../../components/layout/template-switcher";
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, useEffect, Suspense, lazy, Component, ErrorInfo, ReactNode } from "react";
 import Theme73 from './theme-73';
 import Theme74 from './theme-74';
 import Theme75 from './theme-75';
@@ -41,539 +41,206 @@ import Theme130 from './theme-130';
 import Theme142 from './theme-142';
 import Theme144 from './theme-144';
 
-// Dynamic imports for all themes with error handling
-const HomePageTheme1 = lazy(() => import("./theme-1"));
-const HomePageTheme2 = lazy(() => import("./theme-2"));
-const HomePageTheme3 = lazy(() => import("./theme-3"));
-const HomePageTheme4 = lazy(() => import("./theme-4"));
-const HomePageTheme5 = lazy(() => import("./theme-5"));
-const HomePageTheme6 = lazy(() => import("./theme-6"));
-const HomePageTheme7 = lazy(() => import("./theme-7"));
-const HomePageTheme8 = lazy(() => import("./theme-8"));
-const HomePageTheme9 = lazy(() => import("./theme-9"));
-const HomePageTheme10 = lazy(() => import("./theme-10"));
-const HomePageTheme11 = lazy(() => import("./theme-11"));
-const HomePageTheme12 = lazy(() => import("./theme-12"));
-const HomePageTheme13 = lazy(() => import("./theme-13"));
-const HomePageTheme14 = lazy(() => import("./theme-14"));
-const HomePageTheme15 = lazy(() => import("./theme-15"));
-const HomePageTheme16 = lazy(() => import("./theme-16"));
-const HomePageTheme17 = lazy(() => import("./theme-17"));
-const HomePageTheme18 = lazy(() => import("./theme-18"));
-const HomePageTheme19 = lazy(() => import("./theme-19"));
-const HomePageTheme20 = lazy(() => import("./theme-20"));
-const HomePageTheme21 = lazy(() => import("./theme-21"));
-const HomePageTheme22 = lazy(() => import("./theme-22"));
-const HomePageTheme23 = lazy(() => import("./theme-23"));
-const HomePageTheme24 = lazy(() => import("./theme-24"));
-const HomePageTheme25 = lazy(() => import("./theme-25"));
-const HomePageTheme26 = lazy(() => import("./theme-26"));
-const HomePageTheme27 = lazy(() => import("./theme-27"));
-const HomePageTheme28 = lazy(() => import("./theme-28"));
-const HomePageTheme29 = lazy(() => import("./theme-29"));
-const HomePageTheme30 = lazy(() => import("./theme-30"));
-const HomePageTheme31 = lazy(() => import("./theme-31"));
-const HomePageTheme32 = lazy(() => import("./theme-32"));
-const HomePageTheme33 = lazy(() => import("./theme-33"));
-const HomePageTheme34 = lazy(() => import("./theme-34"));
-const HomePageTheme35 = lazy(() => import("./theme-35"));
-const HomePageTheme36 = lazy(() => import("./theme-36"));
-const HomePageTheme37 = lazy(() => import("./theme-37"));
-const HomePageTheme38 = lazy(() => import("./theme-38"));
-const HomePageTheme39 = lazy(() => import("./theme-39"));
-const HomePageTheme40 = lazy(() => import("./theme-40"));
-const HomePageTheme41 = lazy(() => import("./theme-41"));
-const HomePageTheme42 = lazy(() => import("./theme-42"));
-const HomePageTheme43 = lazy(() => import("./theme-43"));
+// Error Boundary Component
+class ThemeErrorBoundary extends Component<
+  { children: ReactNode; fallback?: ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: ReactNode; fallback?: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('Theme loading error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-900 to-red-800">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-red-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-red-400 text-lg font-mono">Theme failed to load</p>
+            <button 
+              onClick={() => this.setState({ hasError: false })}
+              className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// Improved dynamic import with better error handling
+const createSafeLazyImport = (importFn: () => Promise<any>, fallbackTheme: string = "theme-1") => {
+  return lazy(() => 
+    importFn().catch((error) => {
+      console.warn(`Theme failed to load, falling back to ${fallbackTheme}:`, error);
+      return import(`./${fallbackTheme}`);
+    })
+  );
+};
+
+// Dynamic imports for all themes with improved error handling
+const HomePageTheme1 = createSafeLazyImport(() => import("./theme-1"));
+const HomePageTheme2 = createSafeLazyImport(() => import("./theme-2"));
+const HomePageTheme3 = createSafeLazyImport(() => import("./theme-3"));
+const HomePageTheme4 = createSafeLazyImport(() => import("./theme-4"));
+const HomePageTheme5 = createSafeLazyImport(() => import("./theme-5"));
+const HomePageTheme6 = createSafeLazyImport(() => import("./theme-6"));
+const HomePageTheme7 = createSafeLazyImport(() => import("./theme-7"));
+const HomePageTheme8 = createSafeLazyImport(() => import("./theme-8"));
+const HomePageTheme9 = createSafeLazyImport(() => import("./theme-9"));
+const HomePageTheme10 = createSafeLazyImport(() => import("./theme-10"));
+const HomePageTheme11 = createSafeLazyImport(() => import("./theme-11"));
+const HomePageTheme12 = createSafeLazyImport(() => import("./theme-12"));
+const HomePageTheme13 = createSafeLazyImport(() => import("./theme-13"));
+const HomePageTheme14 = createSafeLazyImport(() => import("./theme-14"));
+const HomePageTheme15 = createSafeLazyImport(() => import("./theme-15"));
+const HomePageTheme16 = createSafeLazyImport(() => import("./theme-16"));
+const HomePageTheme17 = createSafeLazyImport(() => import("./theme-17"));
+const HomePageTheme18 = createSafeLazyImport(() => import("./theme-18"));
+const HomePageTheme19 = createSafeLazyImport(() => import("./theme-19"));
+const HomePageTheme20 = createSafeLazyImport(() => import("./theme-20"));
+const HomePageTheme21 = createSafeLazyImport(() => import("./theme-21"));
+const HomePageTheme22 = createSafeLazyImport(() => import("./theme-22"));
+const HomePageTheme23 = createSafeLazyImport(() => import("./theme-23"));
+const HomePageTheme24 = createSafeLazyImport(() => import("./theme-24"));
+const HomePageTheme25 = createSafeLazyImport(() => import("./theme-25"));
+const HomePageTheme26 = createSafeLazyImport(() => import("./theme-26"));
+const HomePageTheme27 = createSafeLazyImport(() => import("./theme-27"));
+const HomePageTheme28 = createSafeLazyImport(() => import("./theme-28"));
+const HomePageTheme29 = createSafeLazyImport(() => import("./theme-29"));
+const HomePageTheme30 = createSafeLazyImport(() => import("./theme-30"));
+const HomePageTheme31 = createSafeLazyImport(() => import("./theme-31"));
+const HomePageTheme32 = createSafeLazyImport(() => import("./theme-32"));
+const HomePageTheme33 = createSafeLazyImport(() => import("./theme-33"));
+const HomePageTheme34 = createSafeLazyImport(() => import("./theme-34"));
+const HomePageTheme35 = createSafeLazyImport(() => import("./theme-35"));
+const HomePageTheme36 = createSafeLazyImport(() => import("./theme-36"));
+const HomePageTheme37 = createSafeLazyImport(() => import("./theme-37"));
+const HomePageTheme38 = createSafeLazyImport(() => import("./theme-38"));
+const HomePageTheme39 = createSafeLazyImport(() => import("./theme-39"));
+const HomePageTheme40 = createSafeLazyImport(() => import("./theme-40"));
+const HomePageTheme41 = createSafeLazyImport(() => import("./theme-41"));
+const HomePageTheme42 = createSafeLazyImport(() => import("./theme-42"));
+const HomePageTheme43 = createSafeLazyImport(() => import("./theme-43"));
 
 // These themes might have issues, so we add error handling
-const HomePageTheme44 = lazy(() => 
-  import("./theme-44").catch(() => {
-    console.warn("Theme 44 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme45 = lazy(() => 
-  import("./theme-45").catch(() => {
-    console.warn("Theme 45 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme46 = lazy(() => 
-  import("./theme-46").catch(() => {
-    console.warn("Theme 46 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme47 = lazy(() => 
-  import("./theme-47").catch(() => {
-    console.warn("Theme 47 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme48 = lazy(() => 
-  import("./theme-48").catch(() => {
-    console.warn("Theme 48 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme49 = lazy(() => 
-  import("./theme-49").catch(() => {
-    console.warn("Theme 49 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme50 = lazy(() => 
-  import("./theme-50").catch(() => {
-    console.warn("Theme 50 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme51 = lazy(() => 
-  import("./theme-51").catch(() => {
-    console.warn("Theme 51 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme52 = lazy(() => 
-  import("./theme-52").catch(() => {
-    console.warn("Theme 52 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme53 = lazy(() => 
-  import("./theme-53").catch(() => {
-    console.warn("Theme 53 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme54 = lazy(() => 
-  import("./theme-54").catch(() => {
-    console.warn("Theme 54 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme55 = lazy(() => 
-  import("./theme-55").catch(() => {
-    console.warn("Theme 55 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme56 = lazy(() => 
-  import("./theme-56").catch(() => {
-    console.warn("Theme 56 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme57 = lazy(() => 
-  import("./theme-57").catch(() => {
-    console.warn("Theme 57 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme58 = lazy(() => 
-  import("./theme-58").catch(() => {
-    console.warn("Theme 58 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme59 = lazy(() => 
-  import("./theme-59").catch(() => {
-    console.warn("Theme 59 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme60 = lazy(() => 
-  import("./theme-60").catch(() => {
-    console.warn("Theme 60 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme61 = lazy(() => 
-  import("./theme-61").catch(() => {
-    console.warn("Theme 61 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme62 = lazy(() => 
-  import("./theme-62").catch(() => {
-    console.warn("Theme 62 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme63 = lazy(() => 
-  import("./theme-63").catch(() => {
-    console.warn("Theme 63 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme64 = lazy(() => 
-  import("./theme-64").catch(() => {
-    console.warn("Theme 64 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme65 = lazy(() => 
-  import("./theme-65").catch(() => {
-    console.warn("Theme 65 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme66 = lazy(() => 
-  import("./theme-66").catch(() => {
-    console.warn("Theme 66 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme67 = lazy(() => 
-  import("./theme-67").catch(() => {
-    console.warn("Theme 67 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme68 = lazy(() => 
-  import("./theme-68").catch(() => {
-    console.warn("Theme 68 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme69 = lazy(() => 
-  import("./theme-69").catch(() => {
-    console.warn("Theme 69 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme70 = lazy(() => 
-  import("./theme-70").catch(() => {
-    console.warn("Theme 70 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme71 = lazy(() => 
-  import("./theme-71").catch(() => {
-    console.warn("Theme 71 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme72 = lazy(() => 
-  import("./theme-72").catch(() => {
-    console.warn("Theme 72 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme73 = lazy(() => 
-  import("./theme-73").catch(() => {
-    console.warn("Theme 73 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme74 = lazy(() => 
-  import("./theme-74").catch(() => {
-    console.warn("Theme 74 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme75 = lazy(() => 
-  import("./theme-75").catch(() => {
-    console.warn("Theme 75 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme76 = lazy(() => 
-  import("./theme-76").catch(() => {
-    console.warn("Theme 76 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme77 = lazy(() => 
-  import("./theme-77").catch(() => {
-    console.warn("Theme 77 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme78 = lazy(() => 
-  import("./theme-78").catch(() => {
-    console.warn("Theme 78 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme79 = lazy(() => 
-  import("./theme-79").catch(() => {
-    console.warn("Theme 79 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme80 = lazy(() => 
-  import("./theme-80").catch(() => {
-    console.warn("Theme 80 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme81 = lazy(() => 
-  import("./theme-81").catch(() => {
-    console.warn("Theme 81 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme82 = lazy(() => 
-  import("./theme-82").catch(() => {
-    console.warn("Theme 82 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme83 = lazy(() => 
-  import("./theme-83").catch(() => {
-    console.warn("Theme 83 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme84 = lazy(() => 
-  import("./theme-84").catch(() => {
-    console.warn("Theme 84 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme85 = lazy(() => 
-  import("./theme-85").catch(() => {
-    console.warn("Theme 85 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme86 = lazy(() => 
-  import("./theme-86").catch(() => {
-    console.warn("Theme 86 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme87 = lazy(() => 
-  import("./theme-87").catch(() => {
-    console.warn("Theme 87 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme88 = lazy(() => 
-  import("./theme-88").catch(() => {
-    console.warn("Theme 88 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme90 = lazy(() => 
-  import("./theme-90").catch(() => {
-    console.warn("Theme 90 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme91 = lazy(() => 
-  import("./theme-91").catch(() => {
-    console.warn("Theme 91 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme92 = lazy(() => 
-  import("./theme-92").catch(() => {
-    console.warn("Theme 92 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme93 = lazy(() => 
-  import("./theme-93").catch(() => {
-    console.warn("Theme 93 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme94 = lazy(() => 
-  import("./theme-94").catch(() => {
-    console.warn("Theme 94 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme95 = lazy(() => 
-  import("./theme-95").catch(() => {
-    console.warn("Theme 95 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme96 = lazy(() => 
-  import("./theme-96").catch(() => {
-    console.warn("Theme 96 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme97 = lazy(() => 
-  import("./theme-97").catch(() => {
-    console.warn("Theme 97 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme98 = lazy(() => 
-  import("./theme-98").catch(() => {
-    console.warn("Theme 98 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme99 = lazy(() => 
-  import("./theme-99").catch(() => {
-    console.warn("Theme 99 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme100 = lazy(() => 
-  import("./theme-100").catch(() => {
-    console.warn("Theme 100 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme101 = lazy(() => 
-  import("./theme-101").catch(() => {
-    console.warn("Theme 101 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme102 = lazy(() => 
-  import("./theme-102").catch(() => {
-    console.warn("Theme 102 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme103 = lazy(() => 
-  import("./theme-103").catch(() => {
-    console.warn("Theme 103 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme104 = lazy(() => 
-  import("./theme-104").catch(() => {
-    console.warn("Theme 104 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme105 = lazy(() => 
-  import("./theme-105").catch(() => {
-    console.warn("Theme 105 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme106 = lazy(() => 
-  import("./theme-106").catch(() => {
-    console.warn("Theme 106 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme107 = lazy(() => 
-  import("./theme-107").catch(() => {
-    console.warn("Theme 107 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme108 = lazy(() => 
-  import("./theme-108").catch(() => {
-    console.warn("Theme 108 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme109 = lazy(() => 
-  import("./theme-109").catch(() => {
-    console.warn("Theme 109 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme110 = lazy(() => 
-  import("./theme-110").catch(() => {
-    console.warn("Theme 110 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme111 = lazy(() => 
-  import("./theme-111").catch(() => {
-    console.warn("Theme 111 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme112 = lazy(() => 
-  import("./theme-112").catch(() => {
-    console.warn("Theme 112 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme113 = lazy(() => 
-  import("./theme-113").catch(() => {
-    console.warn("Theme 113 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme114 = lazy(() => 
-  import("./theme-114").catch(() => {
-    console.warn("Theme 114 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme115 = lazy(() => 
-  import("./theme-115").catch(() => {
-    console.warn("Theme 115 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme116 = lazy(() => 
-  import("./theme-116").catch(() => {
-    console.warn("Theme 116 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme117 = lazy(() => 
-  import("./theme-117").catch(() => {
-    console.warn("Theme 117 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme118 = lazy(() => 
-  import("./theme-118").catch(() => {
-    console.warn("Theme 118 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme119 = lazy(() => 
-  import("./theme-119").catch(() => {
-    console.warn("Theme 119 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme120 = lazy(() => 
-  import("./theme-120").catch(() => {
-    console.warn("Theme 120 failed to load, falling back to Theme 1");
-    return import("./theme-1");
-  })
-);
-const HomePageTheme123 = lazy(() => import("./theme-123"));
-const HomePageTheme124 = lazy(() => import("./theme-124"));
-const HomePageTheme125 = lazy(() => import("./theme-125"));
-const HomePageTheme126 = lazy(() => import("./theme-126"));
-const HomePageTheme127 = lazy(() => import("./theme-127"));
-const HomePageTheme128 = lazy(() => import("./theme-128"));
-const HomePageTheme129 = lazy(() => import("./theme-129"));
-const HomePageTheme130 = lazy(() => import("./theme-130"));
-const HomePageTheme131 = lazy(() => import("./theme-131"));
-const HomePageTheme132 = lazy(() => import("./theme-132"));
-const HomePageTheme133 = lazy(() => import("./theme-133"));
-const HomePageTheme134 = lazy(() => import("./theme-134"));
-const HomePageTheme135 = lazy(() => import("./theme-135"));
-const HomePageTheme136 = lazy(() => import("./theme-136"));
-const HomePageTheme137 = lazy(() => import("./theme-137"));
-const HomePageTheme138 = lazy(() => import("./theme-138"));
-const HomePageTheme139 = lazy(() => import("./theme-139"));
-const HomePageTheme140 = lazy(() => import("./theme-140"));
-const HomePageTheme141 = lazy(() => import("./theme-141"));
-const HomePageTheme142 = lazy(() => import("./theme-142"));
-const HomePageTheme143 = lazy(() => import("./theme-143"));
-const HomePageTheme144 = lazy(() => import("./theme-144"));
-const HomePageTheme145 = lazy(() => import("./theme-145"));
-const HomePageTheme146 = lazy(() => import("./theme-146"));
-const HomePageTheme147 = lazy(() => import("./theme-147"));
-const HomePageTheme148 = lazy(() => import("./theme-148"));
-const HomePageTheme149 = lazy(() => import("./theme-149"));
-const HomePageTheme150 = lazy(() => import("./theme-150"));
-const HomePageTheme151 = lazy(() => import("./theme-151"));
+const HomePageTheme44 = createSafeLazyImport(() => import("./theme-44"), "theme-1");
+const HomePageTheme45 = createSafeLazyImport(() => import("./theme-45"), "theme-1");
+const HomePageTheme46 = createSafeLazyImport(() => import("./theme-46"), "theme-1");
+const HomePageTheme47 = createSafeLazyImport(() => import("./theme-47"), "theme-1");
+const HomePageTheme48 = createSafeLazyImport(() => import("./theme-48"), "theme-1");
+const HomePageTheme49 = createSafeLazyImport(() => import("./theme-49"), "theme-1");
+const HomePageTheme50 = createSafeLazyImport(() => import("./theme-50"), "theme-1");
+const HomePageTheme51 = createSafeLazyImport(() => import("./theme-51"), "theme-1");
+const HomePageTheme52 = createSafeLazyImport(() => import("./theme-52"), "theme-1");
+const HomePageTheme53 = createSafeLazyImport(() => import("./theme-53"), "theme-1");
+const HomePageTheme54 = createSafeLazyImport(() => import("./theme-54"), "theme-1");
+const HomePageTheme55 = createSafeLazyImport(() => import("./theme-55"), "theme-1");
+const HomePageTheme56 = createSafeLazyImport(() => import("./theme-56"), "theme-1");
+const HomePageTheme57 = createSafeLazyImport(() => import("./theme-57"), "theme-1");
+const HomePageTheme58 = createSafeLazyImport(() => import("./theme-58"), "theme-1");
+const HomePageTheme59 = createSafeLazyImport(() => import("./theme-59"), "theme-1");
+const HomePageTheme60 = createSafeLazyImport(() => import("./theme-60"), "theme-1");
+const HomePageTheme61 = createSafeLazyImport(() => import("./theme-61"), "theme-1");
+const HomePageTheme62 = createSafeLazyImport(() => import("./theme-62"), "theme-1");
+const HomePageTheme63 = createSafeLazyImport(() => import("./theme-63"), "theme-1");
+const HomePageTheme64 = createSafeLazyImport(() => import("./theme-64"), "theme-1");
+const HomePageTheme65 = createSafeLazyImport(() => import("./theme-65"), "theme-1");
+const HomePageTheme66 = createSafeLazyImport(() => import("./theme-66"), "theme-1");
+const HomePageTheme67 = createSafeLazyImport(() => import("./theme-67"), "theme-1");
+const HomePageTheme68 = createSafeLazyImport(() => import("./theme-68"), "theme-1");
+const HomePageTheme69 = createSafeLazyImport(() => import("./theme-69"), "theme-1");
+const HomePageTheme70 = createSafeLazyImport(() => import("./theme-70"), "theme-1");
+const HomePageTheme71 = createSafeLazyImport(() => import("./theme-71"), "theme-1");
+const HomePageTheme72 = createSafeLazyImport(() => import("./theme-72"), "theme-1");
+const HomePageTheme80 = createSafeLazyImport(() => import("./theme-80"), "theme-1");
+const HomePageTheme81 = createSafeLazyImport(() => import("./theme-81"), "theme-1");
+const HomePageTheme82 = createSafeLazyImport(() => import("./theme-82"), "theme-1");
+const HomePageTheme83 = createSafeLazyImport(() => import("./theme-83"), "theme-1");
+const HomePageTheme84 = createSafeLazyImport(() => import("./theme-84"), "theme-1");
+const HomePageTheme85 = createSafeLazyImport(() => import("./theme-85"), "theme-1");
+const HomePageTheme86 = createSafeLazyImport(() => import("./theme-86"), "theme-1");
+const HomePageTheme87 = createSafeLazyImport(() => import("./theme-87"), "theme-1");
+const HomePageTheme88 = createSafeLazyImport(() => import("./theme-88"), "theme-1");
+const HomePageTheme89 = createSafeLazyImport(() => import("./theme-89"), "theme-1");
+const HomePageTheme90 = createSafeLazyImport(() => import("./theme-90"), "theme-1");
+const HomePageTheme91 = createSafeLazyImport(() => import("./theme-91"), "theme-1");
+const HomePageTheme92 = createSafeLazyImport(() => import("./theme-92"), "theme-1");
+const HomePageTheme93 = createSafeLazyImport(() => import("./theme-93"), "theme-1");
+const HomePageTheme94 = createSafeLazyImport(() => import("./theme-94"), "theme-1");
+const HomePageTheme95 = createSafeLazyImport(() => import("./theme-95"), "theme-1");
+const HomePageTheme96 = createSafeLazyImport(() => import("./theme-96"), "theme-1");
+const HomePageTheme97 = createSafeLazyImport(() => import("./theme-97"), "theme-1");
+const HomePageTheme98 = createSafeLazyImport(() => import("./theme-98"), "theme-1");
+const HomePageTheme99 = createSafeLazyImport(() => import("./theme-99"), "theme-1");
+const HomePageTheme100 = createSafeLazyImport(() => import("./theme-100"), "theme-1");
+const HomePageTheme101 = createSafeLazyImport(() => import("./theme-101"), "theme-1");
+const HomePageTheme102 = createSafeLazyImport(() => import("./theme-102"), "theme-1");
+const HomePageTheme103 = createSafeLazyImport(() => import("./theme-103"), "theme-1");
+const HomePageTheme104 = createSafeLazyImport(() => import("./theme-104"), "theme-1");
+const HomePageTheme105 = createSafeLazyImport(() => import("./theme-105"), "theme-1");
+const HomePageTheme106 = createSafeLazyImport(() => import("./theme-106"), "theme-1");
+const HomePageTheme107 = createSafeLazyImport(() => import("./theme-107"), "theme-1");
+const HomePageTheme108 = createSafeLazyImport(() => import("./theme-108"), "theme-1");
+const HomePageTheme109 = createSafeLazyImport(() => import("./theme-109"), "theme-1");
+const HomePageTheme110 = createSafeLazyImport(() => import("./theme-110"), "theme-1");
+const HomePageTheme111 = createSafeLazyImport(() => import("./theme-111"), "theme-1");
+const HomePageTheme112 = createSafeLazyImport(() => import("./theme-112"), "theme-1");
+const HomePageTheme113 = createSafeLazyImport(() => import("./theme-113"), "theme-1");
+const HomePageTheme114 = createSafeLazyImport(() => import("./theme-114"), "theme-1");
+const HomePageTheme115 = createSafeLazyImport(() => import("./theme-115"), "theme-1");
+const HomePageTheme116 = createSafeLazyImport(() => import("./theme-116"), "theme-1");
+const HomePageTheme117 = createSafeLazyImport(() => import("./theme-117"), "theme-1");
+const HomePageTheme118 = createSafeLazyImport(() => import("./theme-118"), "theme-1");
+const HomePageTheme119 = createSafeLazyImport(() => import("./theme-119"), "theme-1");
+const HomePageTheme120 = createSafeLazyImport(() => import("./theme-120"), "theme-1");
+const HomePageTheme121 = createSafeLazyImport(() => import("./theme-121"), "theme-1");
+const HomePageTheme122 = createSafeLazyImport(() => import("./theme-122"), "theme-1");
+const HomePageTheme123 = createSafeLazyImport(() => import("./theme-123"), "theme-1");
+const HomePageTheme124 = createSafeLazyImport(() => import("./theme-124"), "theme-1");
+const HomePageTheme125 = createSafeLazyImport(() => import("./theme-125"), "theme-1");
+const HomePageTheme126 = createSafeLazyImport(() => import("./theme-126"), "theme-1");
+const HomePageTheme127 = createSafeLazyImport(() => import("./theme-127"), "theme-1");
+const HomePageTheme128 = createSafeLazyImport(() => import("./theme-128"), "theme-1");
+const HomePageTheme129 = createSafeLazyImport(() => import("./theme-129"), "theme-1");
+const HomePageTheme130 = createSafeLazyImport(() => import("./theme-130"), "theme-1");
+const HomePageTheme131 = createSafeLazyImport(() => import("./theme-131"), "theme-1");
+const HomePageTheme132 = createSafeLazyImport(() => import("./theme-132"), "theme-1");
+const HomePageTheme133 = createSafeLazyImport(() => import("./theme-133"), "theme-1");
+const HomePageTheme134 = createSafeLazyImport(() => import("./theme-134"), "theme-1");
+const HomePageTheme135 = createSafeLazyImport(() => import("./theme-135"), "theme-1");
+const HomePageTheme136 = createSafeLazyImport(() => import("./theme-136"), "theme-1");
+const HomePageTheme137 = createSafeLazyImport(() => import("./theme-137"), "theme-1");
+const HomePageTheme138 = createSafeLazyImport(() => import("./theme-138"), "theme-1");
+const HomePageTheme139 = createSafeLazyImport(() => import("./theme-139"), "theme-1");
+const HomePageTheme140 = createSafeLazyImport(() => import("./theme-140"), "theme-1");
+const HomePageTheme141 = createSafeLazyImport(() => import("./theme-141"), "theme-1");
+const HomePageTheme142 = createSafeLazyImport(() => import("./theme-142"), "theme-1");
+const HomePageTheme143 = createSafeLazyImport(() => import("./theme-143"), "theme-1");
+const HomePageTheme144 = createSafeLazyImport(() => import("./theme-144"), "theme-1");
+const HomePageTheme145 = createSafeLazyImport(() => import("./theme-145"), "theme-1");
+const HomePageTheme146 = createSafeLazyImport(() => import("./theme-146"), "theme-1");
+const HomePageTheme147 = createSafeLazyImport(() => import("./theme-147"), "theme-1");
+const HomePageTheme148 = createSafeLazyImport(() => import("./theme-148"), "theme-1");
+const HomePageTheme149 = createSafeLazyImport(() => import("./theme-149"), "theme-1");
+const HomePageTheme150 = createSafeLazyImport(() => import("./theme-150"), "theme-1");
+const HomePageTheme151 = createSafeLazyImport(() => import("./theme-151"), "theme-1");
+const HomePageTheme152 = createSafeLazyImport(() => import("./theme-152"), "theme-1");
 
-export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12" | "theme-13" | "theme-14" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43" | "theme-44" | "theme-45" | "theme-46" | "theme-47" | "theme-48" | "theme-49" | "theme-50" | "theme-51" | "theme-52" | "theme-53" | "theme-54" | "theme-55" | "theme-56" | "theme-57" | "theme-58" | "theme-59" | "theme-60" | "theme-61" | "theme-62" | "theme-63" | "theme-64" | "theme-65" | "theme-66" | "theme-67" | "theme-68" | "theme-69" | "theme-70" | "theme-71" | "theme-72" | "theme-73" | "theme-74" | "theme-75" | "theme-76" | "theme-77" | "theme-78" | "theme-79" | "theme-80" | "theme-81" | "theme-82" | "theme-83" | "theme-84" | "theme-85" | "theme-86" | "theme-87" | "theme-88" | "theme-89" | "theme-90" | "theme-91" | "theme-92" | "theme-93" | "theme-94" | "theme-95" | "theme-96" | "theme-97" | "theme-98" | "theme-99" | "theme-100" | "theme-101" | "theme-102" | "theme-103" | "theme-104" | "theme-105" | "theme-106" | "theme-107" | "theme-108" | "theme-109" | "theme-110" | "theme-111" | "theme-112" | "theme-113" | "theme-114" | "theme-115" | "theme-116" | "theme-117" | "theme-118" | "theme-119" | "theme-120" | "theme-121" | "theme-122" | "theme-123" | "theme-124" | "theme-125" | "theme-126" | "theme-127" | "theme-128" | "theme-129" | "theme-130" | "theme-131" | "theme-132" | "theme-133" | "theme-134" | "theme-135" | "theme-136" | "theme-137" | "theme-138" | "theme-139" | "theme-140" | "theme-141" | "theme-142" | "theme-143" | "theme-144" | "theme-145" | "theme-146" | "theme-147" | "theme-148" | "theme-149" | "theme-150" | "theme-151";
+export type LandingPageTheme = "theme-1" | "theme-2" | "theme-3" | "theme-4" | "theme-5" | "theme-6" | "theme-7" | "theme-8" | "theme-9" | "theme-10" | "theme-11" | "theme-12" | "theme-13" | "theme-14" | "theme-15" | "theme-16" | "theme-17" | "theme-18" | "theme-19" | "theme-20" | "theme-21" | "theme-22" | "theme-23" | "theme-24" | "theme-25" | "theme-26" | "theme-27" | "theme-28" | "theme-29" | "theme-30" | "theme-31" | "theme-32" | "theme-33" | "theme-34" | "theme-35" | "theme-36" | "theme-37" | "theme-38" | "theme-39" | "theme-40" | "theme-41" | "theme-42" | "theme-43" | "theme-44" | "theme-45" | "theme-46" | "theme-47" | "theme-48" | "theme-49" | "theme-50" | "theme-51" | "theme-52" | "theme-53" | "theme-54" | "theme-55" | "theme-56" | "theme-57" | "theme-58" | "theme-59" | "theme-60" | "theme-61" | "theme-62" | "theme-63" | "theme-64" | "theme-65" | "theme-66" | "theme-67" | "theme-68" | "theme-69" | "theme-70" | "theme-71" | "theme-72" | "theme-73" | "theme-74" | "theme-75" | "theme-76" | "theme-77" | "theme-78" | "theme-79" | "theme-80" | "theme-81" | "theme-82" | "theme-83" | "theme-84" | "theme-85" | "theme-86" | "theme-87" | "theme-88" | "theme-89" | "theme-90" | "theme-91" | "theme-92" | "theme-93" | "theme-94" | "theme-95" | "theme-96" | "theme-97" | "theme-98" | "theme-99" | "theme-100" | "theme-101" | "theme-102" | "theme-103" | "theme-104" | "theme-105" | "theme-106" | "theme-107" | "theme-108" | "theme-109" | "theme-110" | "theme-111" | "theme-112" | "theme-113" | "theme-114" | "theme-115" | "theme-116" | "theme-117" | "theme-118" | "theme-119" | "theme-120" | "theme-121" | "theme-122" | "theme-123" | "theme-124" | "theme-125" | "theme-126" | "theme-127" | "theme-128" | "theme-129" | "theme-130" | "theme-131" | "theme-132" | "theme-133" | "theme-134" | "theme-135" | "theme-136" | "theme-137" | "theme-138" | "theme-139" | "theme-140" | "theme-141" | "theme-142" | "theme-143" | "theme-144" | "theme-145" | "theme-146" | "theme-147" | "theme-148" | "theme-149" | "theme-150" | "theme-151" | "theme-152";
 
 // Loading component for Suspense fallback
 const LoadingFallback = () => (
@@ -898,6 +565,8 @@ export default function HomePage() {
          return <Suspense fallback={<LoadingFallback />}><HomePageTheme150 /></Suspense>;
        case "theme-151":
          return <Suspense fallback={<LoadingFallback />}><HomePageTheme151 /></Suspense>;
+       case "theme-152":
+         return <Suspense fallback={<LoadingFallback />}><HomePageTheme152 /></Suspense>;
        default:
          return <HomePageTheme1 />;
     }
@@ -906,9 +575,11 @@ export default function HomePage() {
   return (
     <>
       <TemplateSwitcher onThemeChange={handleThemeChange} activeTheme={activeTheme} />
-      <Suspense fallback={<LoadingFallback />}>
-        {renderTheme()}
-      </Suspense>
+      <ThemeErrorBoundary>
+        <Suspense fallback={<LoadingFallback />}>
+          {renderTheme()}
+        </Suspense>
+      </ThemeErrorBoundary>
     </>
   );
 }
