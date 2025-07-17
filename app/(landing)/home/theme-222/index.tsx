@@ -1,160 +1,111 @@
 "use client";
 
-import React fromreact;
-import { Button } from@/components/ui/button";
-import { Badge } from @/components/ui/badge";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 
-const ecoProducts = [
-  { icon: 🌱", title: Bamboo Products", description: "Produk ramah lingkungan dari bambu yang sustainable dan biodegradable},
-  { icon: "♻️", title: "Recycled Materials", description: Barang daur ulang dengan kualitas premium dan desain modern},
-  { icon: "🌿, title: "Organic Food, description: "Makanan organik segar langsung dari petani lokal},
-  { icon:💚itle: "Eco Fashion,description: "Pakaian sustainable dari bahan ramah lingkungan" },
+const features = [
+  {
+    icon: (
+      <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="16" rx="4" fill="#2563eb"/><path d="M8 16h16" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+    ),
+    title: "Realtime Collaboration",
+    desc: "Work together with your team in real time, from anywhere."
+  },
+  {
+    icon: (
+      <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="#fb923c"/><path d="M16 10v6l4 2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+    ),
+    title: "Smart Notifications",
+    desc: "Stay updated with intelligent, non-intrusive alerts."
+  },
+  {
+    icon: (
+      <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><rect x="8" y="8" width="16" height="16" rx="8" fill="#22d3ee"/><path d="M16 12v4l2 2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+    ),
+    title: "Cloud Sync",
+    desc: "Your data is always safe and accessible in the cloud."
+  },
 ];
 
-const initiatives = [
-  { name: "Tree Planting Program, impact: "1000ees Planted", date: "Setiap Bulan", location: Seluruh Indonesia },  { name: "Plastic Free Campaign, impact: "50,000 Plastic Reduced", date: "Ongoing", location: "Jakarta & Surabaya" },
-  { name:Community Garden", impact: "100 Gardens Created, date:Weekly", location:Komunitas Lokal" },
+const testimonials = [
+  {
+    name: "Ayu Pratama",
+    role: "Product Manager",
+    content: "Platform ini sangat membantu tim kami berkolaborasi dengan cepat dan efisien!",
+    avatar: "AP"
+  },
+  {
+    name: "Rizky Saputra",
+    role: "Software Engineer",
+    content: "Fitur notifikasinya cerdas, tidak mengganggu fokus kerja saya.",
+    avatar: "RS"
+  },
+  {
+    name: "Dewi Lestari",
+    role: "UI/UX Designer",
+    content: "Desainnya modern dan mudah digunakan. Sangat direkomendasikan!",
+    avatar: "DL"
+  },
 ];
 
-const testimonials = [object Object]   name:SariIndah,    avatar: 🌱",
-    role: Eco Enthusiast",
-    content:Produk-produk di sini benar-benar ramah lingkungan! Kualitasnya bagus dan saya merasa berkontribusi untuk bumi yang lebih baik.",
-  },
- [object Object]  name: "Budi Santoso,    avatar:♻️le: Environmental Activist",
-    content:Inisiatif mereka luar biasa! Program penanaman pohon dan kampanye bebas plastik sangat inspiratif dan berdampak nyata.",
-  },
- [object Object]   name:MayaPutri,    avatar:🌿    role: Organic Farmer",
-    content: "Sebagai petani organik, saya bangga bisa berkontribusi di sini. Masyarakat semakin sadar akan pentingnya makanan sehat.",
-  },
-];
+const Theme222: React.FC = () => {
+  const [testimonialIdx, setTestimonialIdx] = useState(0);
 
-const Theme222: React.FC = () => [object Object] return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50via-emerald-100 to-green-200 relative overflow-hidden text-green-900">
-      {/* Natural Background Elements */}
-      <div className="absolute inset-0 z-0">
-        {/* Organic Shapes */}
-        <svg className="absolute top0left-0-full h-64viewBox="0040320none>
-          <path d="M0320360280 72030Q180,3201440,280144032020#10981illOpacity=0.1/>
-          <path d="M020606072028080,30144060L144032002059669fillOpacity="015/>
-        </svg>
-        
-  [object Object]/* Floating Leaves */}
-        <svg className="absolute top-20 left-10 w-16 h-16animate-float-slowviewBox=0 06464none>
-          <path d=M328Q481656,32 Q48,483256Q16,48816,1632,8ill="#10981illOpacity=0.3/>
-          <path d=M3212Q44185032Q44463252Q2461432Q2018321259669illOpacity="00.4/>
-        </svg>
-        
-        <svg className="absolute top-40right-20020imate-floatviewBox=0 08080none>
-          <path d=M4010Q60207040Q60604070Q2601040Q2020401059669illOpacity=025/>
-          <path d=M4015Q55226240Q55584065 Q2558180252215#1981fillOpacity="035/>
-        </svg>
-        
-        {/* Tree Silhouettes */}
-        <svg className=absolute bottom0left-0-full h-32viewBox="004128none>        {[...Array(8)].map((_, i) => {
-            const x = 80 + i * 160;
-            const h = 40 + Math.random() * 30;
-            return (
-              <g key={i}>
-                <path d={`M${x},128 L$[object Object]x-15},${128-h} L$[object Object]x+15},${128-h} Z`} fill="#59669 fillOpacity="0.3" />
-                <path d={`M${x},128 L${x-10},${128h+10 L${x+1128+10 fill="#10981 fillOpacity="0.4" />
-                <rect x={x-2 y={128-h} width="4height=hill="#65f46llOpacity="0.5>
-              </g>
-            );
-          })}
-        </svg>
-        
-        {/* Grass Pattern */}
-        <svg className=absolute bottom0left-0-full h-16 viewBox=044064none>    object Object][...Array(60].map((_, i) => {
-            const x = 20 + i * 24;
-            const h =8 + Math.random() * 12;
-            return (
-              <rect key={i} x={x} y={64-h} width="2height={h} fill="#10981 fillOpacity="0.4" rx=1/>
-            );
-          })}
-        </svg>
-        
-        {/* Sun Rays */}
-        <svg className="absolute top-10right-102424imate-pulseviewBox=0 09696="none">
-          <circle cx=48=480fbbf24illOpacity=0.6/>
-          {[...Array(8)].map((_, i) => {
-            const angle = (i *45) * (Math.PI /180
-            const x18 + Math.cos(angle) * 30;
-            const y18 + Math.sin(angle) * 30;
-            const x28 + Math.cos(angle) * 40;
-            const y28 + Math.sin(angle) * 40;
-            return (
-              <line key=[object Object]i} x1=[object Object]x1 y1=object Object]y1x2} y2={y2 stroke=#fbbf24h=2 strokeOpacity="0.4/>
-            );
-          })}
-        </svg>
-      </div>
+  const nextTestimonial = () => setTestimonialIdx((i) => (i + 1) % testimonials.length);
+  const prevTestimonial = () => setTestimonialIdx((i) => (i - 1 + testimonials.length) % testimonials.length);
 
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 text-gray-900 flex flex-col">
       {/* Header */}
-      <header className="relative z-10    <div className=container mx-auto px-4 flex items-center justify-between">
-          <div className=flexitems-center space-x-3>
-            <div className="w-12-12 bg-gradient-to-br from-green-50ald-60nded-xl flex items-center justify-center border-2-green-400             <span className="text-2xl">🌱</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-700 bg-clip-text text-transparent">
-              EcoLife Indonesia
-            </span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-8           <a href="#beranda" className="text-green-700hover:text-emerald-600emibold transition-colors">Beranda</a>
-            <a href="#products" className="text-green-700hover:text-emerald-600emibold transition-colors">Produk</a>
-            <a href="#initiatives" className="text-green-700hover:text-emerald-600emibold transition-colors">Inisiatif</a>
-            <a href="#testimonials" className="text-green-700hover:text-emerald-600emibold transition-colors">Testimoni</a>
-          </nav>
-          <Button className="bg-gradient-to-r from-green-500-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white border-0ont-bold shadow-lg">
-            Join Eco Movement
-          </Button>
+      <header className="w-full py-6 px-8 flex items-center justify-between bg-white/80 shadow-sm z-10">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">T</div>
+          <span className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-700 to-orange-400 bg-clip-text text-transparent">Techly</span>
         </div>
+        <nav className="hidden md:flex gap-8 font-medium text-blue-900">
+          <a href="#features" className="hover:text-orange-500 transition">Features</a>
+          <a href="#testimonials" className="hover:text-orange-500 transition">Testimonials</a>
+          <a href="#cta" className="hover:text-orange-500 transition">Get Started</a>
+        </nav>
+        <Button className="bg-orange-400 hover:bg-orange-500 text-white font-bold px-6 py-2 rounded-lg shadow">Sign Up</Button>
       </header>
 
       {/* Hero Section */}
-      <section className=relative z-10t-center">
-        <div className=container mx-auto px-4>
-          <Badge className="bg-green-500/20 text-green-700 border-green-400/30 mb-4 font-bold text-lg">
-            🌱 Sustainable Living
-          </Badge>
-          <h1className=text-5l md:text-7-extrabold leading-tight mb-6gradient-to-r from-green-60emerald-60to-green-700 bg-clip-text text-transparent drop-shadow-xl>           EcoLife Indonesia
+      <section className="flex-1 flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-20 md:py-32 relative">
+        <div className="max-w-xl z-10">
+          <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold mb-4">#1 Team Productivity Platform</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Boost Your Team's <span className="text-orange-500">Productivity</span> <br /> with <span className="text-blue-600">Techly</span>
           </h1>
-          <p className=text-xl md:text-2text-green-800 max-w-2xl mx-auto mb-8 font-medium>
-            Hidup berkelanjutan dimulai dari pilihan kecil. Temukan produk ramah lingkungan, dukung inisiatif hijau, dan berkontribusi untuk masa depan yang lebih baik.
-          </p>
-          <div className=flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size=lgsName="bg-gradient-to-r from-green-500-emerald-600 hover:from-green-600 hover:to-emerald-700text-white px-8 py-4g border-0ont-bold shadow-lg">
-              Explore Products
-            </Button>
-            <Button size="lg variant="outline" className="border-green-600t-green-70hover:bg-green-500/10 px-8 py-4 text-lg font-bold">
-              Join Community
-            </Button>
+          <p className="text-lg md:text-xl text-gray-700 mb-8">All-in-one platform untuk kolaborasi, sinkronisasi, dan inovasi. Coba gratis sekarang!</p>
+          <div className="flex gap-4">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg">Coba Gratis</Button>
+            <Button variant="outline" className="border-blue-600 text-blue-700 font-bold px-8 py-3 rounded-lg">Lihat Demo</Button>
           </div>
+        </div>
+        {/* SVG Illustration */}
+        <div className="w-full max-w-md z-0">
+          <svg viewBox="0 0 400 300" fill="none" className="w-full h-auto">
+            <rect x="40" y="60" width="320" height="180" rx="24" fill="#2563eb" fillOpacity="0.08" />
+            <rect x="80" y="100" width="240" height="100" rx="16" fill="#2563eb" fillOpacity="0.15" />
+            <circle cx="200" cy="150" r="48" fill="#fb923c" fillOpacity="0.18" />
+            <rect x="160" y="130" width="80" height="40" rx="8" fill="#2563eb" fillOpacity="0.5" />
+            <rect x="180" y="145" width="40" height="10" rx="5" fill="#fff" />
+            <rect x="180" y="160" width="40" height="6" rx="3" fill="#fff" fillOpacity="0.7" />
+          </svg>
         </div>
       </section>
 
-      {/* Eco Products */}
-      <section id="products" className=relative z-10py-16gradient-to-b from-white/80to-green-100/90">
-        <div className=container mx-auto px-4     <h2className=text-3xl md:text-4bold mb-8text-green-700nter">Eco-Friendly Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8>
-            {ecoProducts.map((product, i) => (
-              <div key={i} className=bg-white/80ed-2 p-6 flex flex-col items-center border border-green-400ow-lg hover:border-emerald-400/40 transition-all duration-300>
-                <div className=text-5b-4nimate-bounce-slow>{product.icon}</div>
-                <div className=text-xl font-bold text-emerald-600>{product.title}</div>
-                <div className="text-green-700medium text-center text-sm">{product.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Environmental Initiatives */}
-      <section id="initiatives" className=relative z-10 py-16    <div className=container mx-auto px-4     <h2className=text-3xl md:text-4bold mb-8t-emerald-700ter">Environmental Initiatives</h2>
-          <div className=grid md:grid-cols-3 gap-8
-            {initiatives.map((initiative, i) => (
-              <div key={i} className=bg-gradient-to-br from-green-400/30 to-emerald-500ded-2xl p-8 border border-green-400ow-lg hover:border-emerald-400/40 transition-all duration-300
-                <h3 className=text-xl font-bold text-emerald-6002initiative.name}</h3
-                <p className=text-green-700 mb-2">{initiative.impact}</p>
-                <p className=text-green-6002>{initiative.date} - {initiative.location}</p>
-                <div className="text-2nt-bold text-green-600{initiative.impact}</div>
+      {/* Features */}
+      <section id="features" className="py-20 px-8 bg-white/80">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-900">Powerful Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((f, i) => (
+              <div key={i} className="bg-blue-50 rounded-2xl p-8 flex flex-col items-center shadow hover:shadow-lg transition">
+                <div className="mb-4">{f.icon}</div>
+                <div className="text-xl font-bold mb-2 text-blue-800">{f.title}</div>
+                <div className="text-gray-700 text-center">{f.desc}</div>
               </div>
             ))}
           </div>
@@ -162,64 +113,43 @@ const Theme222: React.FC = () => [object Object] return (
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className=relative z-10py-16gradient-to-b from-green-100/80 to-white/90">
-        <div className=container mx-auto px-4     <h2className=text-3xl md:text-4bold mb-8t-emerald-600-center">Community Testimonials</h2>
-          <div className=grid md:grid-cols-3gap-8
-        object Object]testimonials.map((testimonial, i) => (
-              <div key={i} className="bg-white/80ded-2l p-6der border-emerald-400/20 shadow-lg flex flex-col items-center hover:border-green-400/40 transition-all duration-300
-                <div className=text-4b-4 animate-bounce">{testimonial.avatar}</div>
-                <div className=text-lg font-bold text-green-700mb-1">{testimonial.name}</div>
-                <div className="text-emerald-60ext-sm mb-3">{testimonial.role}</div>
-                <div className=text-green-700ext-center text-sm">"{testimonial.content}"</div>
+      <section id="testimonials" className="py-20 px-8 bg-gradient-to-r from-blue-50 via-white to-orange-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-900">What Our Users Say</h2>
+          <div className="relative flex flex-col items-center">
+            <div className="bg-white rounded-2xl shadow-lg p-8 max-w-xl text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold mr-2">
+                  {testimonials[testimonialIdx].avatar}
+                </div>
+                <div className="text-left">
+                  <div className="font-bold text-blue-800">{testimonials[testimonialIdx].name}</div>
+                  <div className="text-sm text-gray-500">{testimonials[testimonialIdx].role}</div>
+                </div>
               </div>
-            ))}
+              <div className="text-lg text-gray-800 italic">"{testimonials[testimonialIdx].content}"</div>
+            </div>
+            <div className="flex gap-4 mt-6">
+              <button onClick={prevTestimonial} className="w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 flex items-center justify-center text-blue-600 font-bold text-xl">&#8592;</button>
+              <button onClick={nextTestimonial} className="w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 flex items-center justify-center text-blue-600 font-bold text-xl">&#8594;</button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className=relative z-10t-center">
-        <div className=container mx-auto px-4     <h2className=text-3xl md:text-4ont-bold mb-4t-green-700 Make a Difference?</h2>
-          <p className="text-lg text-green-800 mb-8 max-w-2xl mx-auto">
-            Bergabung dengan ribuan orang yang sudah memilih hidup berkelanjutan. Setiap pembelian dan aksi kecil berkontribusi untuk bumi yang lebih hijau!
-          </p>
-          <Button size=lgsName="bg-gradient-to-r from-green-500-emerald-600 hover:from-green-600 hover:to-emerald-700ext-white px-10 py-4 text-xl font-bold shadow-xl">
-            Start Your Eco Journey
-          </Button>
+      <section id="cta" className="py-20 px-8 bg-orange-50">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-600">Ready to Supercharge Your Team?</h2>
+          <p className="text-lg text-gray-700 mb-8">Daftar sekarang dan rasakan kemudahan kolaborasi modern bersama Techly.</p>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-xl text-xl shadow-lg">Mulai Sekarang</Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className=relative z-108-center text-green-700ite/80der-t border-green-400/10">
-        <div className=container mx-auto px-4    <div className=flex flex-col md:flex-row items-center justify-between gap-4>
-            <div className=flex items-center gap-2 justify-center md:justify-start>             <span className=text-xl">🌱</span>
-              <span className="font-bold">EcoLife Indonesia</span>
-            </div>
-            <div className="text-sm">&copy; 2024 EcoLife Indonesia. All rights reserved.</div>
-            <div className="flex gap-4 justify-center md:justify-end>
-              <a href="# className="hover:text-emerald-600 transition-colors">Instagram</a>
-              <a href="# className="hover:text-emerald-600 transition-colors">Facebook</a>
-              <a href="# className="hover:text-emerald-600 transition-colors">YouTube</a>
-            </div>
-          </div>
-        </div>
+      <footer className="w-full py-8 px-8 bg-white/80 text-center text-gray-500 text-sm mt-auto">
+        &copy; {new Date().getFullYear()} Techly. All rights reserved.
       </footer>
-
-      {/* Custom Animations */}
-      <style jsx>{`
-        @keyframes float-slow {
-       0ansform: translateY(0) rotate(0deg); }
-50ansform: translateY(-20) rotate(5g); }
-  100ansform: translateY(0) rotate(0deg); }
-        }
-        @keyframes float {
-       0ansform: translateY(0x); }
-50ansform: translateY(-15 }
-  100ansform: translateY(0
-        }
-        .animate-float-slow [object Object]animation: float-slow 8s ease-in-out infinite; }
-        .animate-float [object Object] animation: float 6s ease-in-out infinite; }
-      `}</style>
     </div>
   );
 };
