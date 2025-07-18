@@ -1,10 +1,14 @@
 'use client';
 
 import Hero from './components/hero';
-import CyberSystems from './components/cyber-systems';
-import HoloTech from './components/holo-tech';
-import QuantumCore from './components/quantum-core';
-import NoirNetwork from './components/noir-network';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
 import Contact from './components/contact';
 
 export default function Theme46() {
@@ -185,12 +189,19 @@ export default function Theme46() {
         </div>
       </div>
 
-      <Hero />
-      <CyberSystems />
-      <HoloTech />
-      <QuantumCore />
-      <NoirNetwork />
-      <Contact />
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
+        <Contact />
+      </div>
 
       {/* Custom Cyberpunk Noir Styles */}
       <style jsx>{`
@@ -389,4 +400,4 @@ export default function Theme46() {
       `}</style>
     </div>
   );
-} 
+}
