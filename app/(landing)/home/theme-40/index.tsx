@@ -1,10 +1,14 @@
 'use client';
 
 import Hero from './components/hero';
-import Colony from './components/colony';
-import Habitats from './components/habitats';
-import Technology from './components/technology';
-import Mission from './components/mission';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
 import Contact from './components/contact';
 
 export default function Theme40() {
@@ -47,10 +51,14 @@ export default function Theme40() {
       </div>
 
       <Hero />
-      <Colony />
-      <Habitats />
-      <Technology />
-      <Mission />
+      <Stats />
+      <Services />
+      <Projects />
+      <Team />
+      <Clients />
+      <Process />
+      <Testimonials />
+      <Pricing />
       <Contact />
 
       {/* Custom CSS for Mars theme */}
@@ -147,4 +155,4 @@ export default function Theme40() {
       `}</style>
     </div>
   );
-} 
+}
