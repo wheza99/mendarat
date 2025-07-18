@@ -1,10 +1,14 @@
 'use client';
 
 import Hero from './components/hero';
-import PowerUps from './components/power-ups';
-import PixelArt from './components/pixel-art';
-import GameStats from './components/game-stats';
-import Achievements from './components/achievements';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
 import Contact from './components/contact';
 
 export default function Theme42() {
@@ -56,10 +60,14 @@ export default function Theme42() {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
-        <PowerUps />
-        <PixelArt />
-        <GameStats />
-        <Achievements />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
         <Contact />
       </div>
 
@@ -203,4 +211,4 @@ export default function Theme42() {
       `}</style>
     </div>
   );
-} 
+}
