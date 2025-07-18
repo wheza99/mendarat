@@ -1,13 +1,17 @@
 'use client';
 
 import Hero from './components/hero';
-import QuantumField from './components/quantum-field';
-import AuroraCore from './components/aurora-core';
-import CosmicFlow from './components/cosmic-flow';
-import EnergyServices from './components/energy-services';
-import QuantumContact from './components/quantum-contact';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
+import Contact from './components/contact';
 
-export default function Theme49() {
+export default function HomePageTheme49() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 text-white relative overflow-hidden">
       {/* Aurora Background Effects */}
@@ -91,12 +95,16 @@ export default function Theme49() {
       {/* Components */}
       <div className="relative z-10">
         <Hero />
-        <QuantumField />
-        <AuroraCore />
-        <CosmicFlow />
-        <EnergyServices />
-        <QuantumContact />
+      <Stats />
+      <Services />
+      <Projects />
+      <Team />
+      <Clients />
+      <Process />
+      <Testimonials />
+      <Pricing />
+      <Contact />
       </div>
     </div>
   );
-} 
+}
