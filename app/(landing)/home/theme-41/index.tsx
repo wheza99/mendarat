@@ -2,10 +2,14 @@
 
 // Cyberpunk Theme Components
 import Hero from './components/hero';
-import CyberServices from './components/cyber-services';
-import NeonTech from './components/neon-tech';
-import DigitalMatrix from './components/digital-matrix';
-import CyberSecurity from './components/cyber-security';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
 import Contact from './components/contact';
 
 export default function Theme41() {
@@ -56,10 +60,14 @@ export default function Theme41() {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
-        <CyberServices />
-        <NeonTech />
-        <DigitalMatrix />
-        <CyberSecurity />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
         <Contact />
       </div>
 
@@ -229,4 +237,4 @@ export default function Theme41() {
       `}</style>
     </div>
   );
-} 
+}
