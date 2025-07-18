@@ -1,10 +1,14 @@
 'use client';
 
 import Hero from './components/hero';
-import Features from './components/features';
-import Typography from './components/typography';
-import Portfolio from './components/portfolio';
-import Statistics from './components/statistics';
+import Services from './components/services';
+import Projects from './components/projects';
+import Stats from './components/stats';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
 import Contact from './components/contact';
 
 export default function Theme43() {
@@ -53,10 +57,14 @@ export default function Theme43() {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
-        <Features />
-        <Typography />
-        <Portfolio />
-        <Statistics />
+        <Services />
+        <Projects />
+        <Stats />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
         <Contact />
       </div>
 
@@ -157,4 +165,4 @@ export default function Theme43() {
       `}</style>
     </div>
   );
-} 
+}
