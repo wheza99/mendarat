@@ -1,13 +1,17 @@
 'use client';
 
 import Hero from './components/hero';
-import NeuralNetwork from './components/neural-network';
-import AICore from './components/ai-core';
-import SynapticFlow from './components/synaptic-flow';
-import CognitiveServices from './components/cognitive-services';
-import BrainInterface from './components/brain-interface';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
+import Contact from './components/contact';
 
-export default function Theme50() {
+export default function HomePageTheme50() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white relative overflow-hidden">
       {/* Neural Network Background Effects */}
@@ -108,12 +112,16 @@ export default function Theme50() {
       {/* Components */}
       <div className="relative z-10">
         <Hero />
-        <NeuralNetwork />
-        <AICore />
-        <SynapticFlow />
-        <CognitiveServices />
-        <BrainInterface />
+      <Stats />
+      <Services />
+      <Projects />
+      <Team />
+      <Clients />
+      <Process />
+      <Testimonials />
+      <Pricing />
+      <Contact />
       </div>
     </div>
   );
-} 
+}

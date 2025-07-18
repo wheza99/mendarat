@@ -271,9 +271,43 @@ export const contactSectionCopy = {
   heading: "Connect with the Cosmos",
   description: "Ready to embark on your quantum journey? Reach out to our stellar team and let's explore the infinite possibilities together.",
   primaryButton: "Send Quantum Message",
-  contactInfo: {
-    email: "hello@quantumcosmos.com",
-    phone: "+1 (555) QUANTUM",
-    address: "123 Aurora Boulevard, Cosmic City, Galaxy 12345"
-  }
-};
+  contactInfo: [
+    {
+      icon: "📧",
+      title: "Quantum Email",
+      details: "hello@quantumcosmos.com"
+    },
+    {
+      icon: "📞",
+      title: "Cosmic Frequency",
+      details: "+1 (555) QUANTUM"
+    },
+    {
+      icon: "📍",
+      title: "Aurora Location",
+      details: "123 Aurora Boulevard, Cosmic City, Galaxy 12345"
+    }
+  ],
+  socialLinks: [
+    {
+      icon: "🔗",
+      title: "LinkedIn",
+      url: "#"
+    },
+    {
+      icon: "🐦",
+      title: "Twitter",
+      url: "#"
+    },
+    {
+      icon: "📘",
+      title: "Facebook",
+      url: "#"
+    },
+    {
+      icon: "📷",
+      title: "Instagram",
+      url: "#"
+    }
+   ]
+ };
