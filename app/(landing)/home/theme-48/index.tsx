@@ -1,13 +1,17 @@
 'use client';
 
 import Hero from './components/hero';
-import CellularGrid from './components/cellular-grid';
-import BioTech from './components/bio-tech';
-import OrganicFlow from './components/organic-flow';
-import NatureServices from './components/nature-services';
-import BiometricContact from './components/biometric-contact';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
+import Contact from './components/contact';
 
-export default function Theme48() {
+export default function HomePageTheme48() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100 text-slate-800 relative overflow-hidden">
       {/* Organic Background Effects */}
@@ -75,12 +79,16 @@ export default function Theme48() {
       {/* Components */}
       <div className="relative z-10">
         <Hero />
-        <CellularGrid />
-        <BioTech />
-        <OrganicFlow />
-        <NatureServices />
-        <BiometricContact />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
+        <Contact />
       </div>
     </div>
   );
-} 
+}
