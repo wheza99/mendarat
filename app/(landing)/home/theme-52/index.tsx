@@ -1,6 +1,17 @@
 'use client';
 
 import Hero from './components/hero';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
+import Contact from './components/contact';
+import Clients from './components/clients';
+
+// Keep existing cyber components for unique theme features
 import MatrixDisplay from './components/matrix-display';
 import NeuralCore from './components/neural-core';
 import CyberInterface from './components/cyber-interface';
@@ -134,6 +145,17 @@ export default function Theme52() {
       {/* Components */}
       <div className="relative z-10">
         <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
+        <Contact />
+        
+        {/* Keep unique cyber components */}
         <MatrixDisplay />
         <NeuralCore />
         <CyberInterface />
@@ -142,4 +164,4 @@ export default function Theme52() {
       </div>
     </div>
   );
-} 
+}
