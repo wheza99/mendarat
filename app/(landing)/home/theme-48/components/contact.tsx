@@ -273,4 +273,4 @@ export default function BiometricContact() {
       </div>
     </section>
   );
-} 
+}
