@@ -1,6 +1,15 @@
 'use client';
 
 import Hero from './components/hero';
+import Stats from './components/stats';
+import Services from './components/services';
+import Projects from './components/projects';
+import Team from './components/team';
+import Clients from './components/clients';
+import Process from './components/process';
+import Testimonials from './components/testimonials';
+import Pricing from './components/pricing';
+import Contact from './components/contact';
 import QuantumField from './components/quantum-field';
 import NebulaCore from './components/nebula-core';
 import GalaxyPortal from './components/galaxy-portal';
@@ -103,6 +112,15 @@ export default function Theme53() {
       {/* Components */}
       <div className="relative z-10">
         <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <Team />
+        <Clients />
+        <Process />
+        <Testimonials />
+        <Pricing />
+        <Contact />
         <QuantumField />
         <NebulaCore />
         <GalaxyPortal />
@@ -111,4 +129,4 @@ export default function Theme53() {
       </div>
     </div>
   );
-} 
+}
